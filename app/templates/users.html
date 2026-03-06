@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+        html , body {
+            width:  100%;
+            height : 100%;
+        }
+    </style>
+</head>
+<body>
+    {% if not l %}
+        <h3>NO USERS <a href="/register">create</a> | <a href="/login"> LOGIN</a></h3>
+    {% endif %}
+    {% for user in users %}
+        <div class="user">
+            <h4 class="username">{{user.username}}</h4>
+            <p>{{user.password}}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -16,7 +16,7 @@ def createApp():
     
     # == configurer app settings ==
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("databaseURL")
-    app.config["SECRET"] = os.urandom(16)
+    app.config["SECRET_KEY"] = os.urandom(16)
     # add extensions to the app
     db.init_app(app)
     migrate.init_app(app,db)

@@ -1,3 +1,9 @@
 [22/02/2026] render_template() not working 
     --> ERROR : user_loader or request_loader
         [!] Solution : the problem came from flask-login , it needs to initialise some stuff i added
+[22/02/2026] no such column: users.email :
+    --> ERROR : i didn't use flask migrate
+        [!] Solution : 
+            1. temporary : delete the database folder and re create it
+            2. useful & professional : use flask migrate
+    

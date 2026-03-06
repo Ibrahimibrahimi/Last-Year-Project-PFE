@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
@@ -12,4 +13,6 @@ def load_user(user_id):
     from .models import User
     return User.query.get(int(user_id))
  
-login_manager.login_view = "auth.login" # redirect to /auth/login endpoint if not logged in
+# redirect to /login endpoint if not logged in
+login_manager.login_view = "auth.login" 
+
