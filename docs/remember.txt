@@ -1,0 +1,3 @@
+- the database url in .env file : 
+    -> sqlite:/// => relative (3 slashes)
+    

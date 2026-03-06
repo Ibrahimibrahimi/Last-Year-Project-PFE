@@ -1,0 +1,3 @@
+[22/02/2026] render_template() not working 
+    --> ERROR : user_loader or request_loader
+        [!] Solution : the problem came from flask-login , it needs to initialise some stuff i added

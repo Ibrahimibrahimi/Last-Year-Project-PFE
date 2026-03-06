@@ -1,10 +1,12 @@
-from app.config import *
-from app import init_app
-app = init_app()
+from app import createApp
 
 
+# start the app only from this file
 if __name__ == "__main__" :
+    app = createApp()
+    
     app.run(
-        debug = Config._SECRET_KEY_ ,
-        host = Config.HOST , 
-        port = Config.PORT)
+        debug=True,
+        host="0.0.0.0",
+        port="8080"
+    )
