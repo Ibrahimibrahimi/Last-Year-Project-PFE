@@ -26,4 +26,17 @@ def createApp():
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
     
+    # SETUP LOGS 
+    from logging.handlers import RotatingFileHandler
+    import logging
+    
+    log_file = RotatingFileHandler(
+        "./app/logs/main.log",
+        maxBytes=10240,
+        backupCount=5
+    )
+    log_file.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    app.logger.addHandler(log_file)
+    app.logger.setLevel(logging.INFO)
+    
     return app

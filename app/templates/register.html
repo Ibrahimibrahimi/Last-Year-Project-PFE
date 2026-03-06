@@ -9,10 +9,16 @@
     <form action="/register" method="post">
         Username <input type="text" name="username" id="" placeholder="Username">
         <br>
-        Email : <input type="email" name="email" id="" placeholder="Email ">
-        <span>{{email_error}}</span>
+        Email : <input type="email" name="email" id="" placeholder="Email " required>
         <br>
-        password : <input type="password" name="password" id="" placeholder="Password">
+        <span style="color : red">{{email_error}}</span>
+        <br>
+        password : <input type="password" name="password" id="" placeholder="Password" required>
+        <br>
+        Birth : <input type="date" name="birth" id="" required>
+        <br>
+        Tell us about yourself <textarea name="bio" id="" cols="30" rows="10" class="bio">Hi i'm new student</textarea>
+        <br>
         <br>
         <input type="submit" value="Create Account">
         <br>
