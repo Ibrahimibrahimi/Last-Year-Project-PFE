@@ -1,7 +1,9 @@
-from routes import init_routes , Flask
+from flask import Flask
+from routes import init_routes
+from functions import *
+
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "ibrahim"
 init_routes(app)
 
 

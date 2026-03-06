@@ -1,0 +1,6 @@
+Flask==3.1.2
+PyJWT==2.8.0
+Flask-Bcrypt==1.0.1
+python-dotenv==1.0.0 # load .env variables
+pymongo==4.6.1
+plotly==6.0.0
