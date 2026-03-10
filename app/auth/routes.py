@@ -24,7 +24,7 @@ def login() :
             return render_template("login.html",password="Wrong password")
         login_user(user) # use the primary key
         return f"==> LOGIN {Email} : {password}"
-    return render_template("login.html")
+    return render_template("/auth/login.html")
 
 
 @auth_bp.route("/register",methods=["POST","GET"])
@@ -56,7 +56,7 @@ def register():
         db.session.commit()
         print("="*50,"USER CREATED") # better to use logs
         return render_template("login.html",created="User created successfully , log in to show your profile")
-    return render_template("register.html")
+    return render_template("/auth/register.html")
 
 
 @login_required
