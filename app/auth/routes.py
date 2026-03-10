@@ -11,19 +11,18 @@ from datetime import datetime
 def login() :
     if request.method == "POST" :
         # get data from form
-        Email = request.form.get("email")
+        Email = request.form.get("email").strip()
         password = request.form.get("password")
         
         # check if correct
         user = User.query.filter_by(email=Email).first()
         if user is None : # NOT EXIST = NONE => REDIRECT
-            logout_user()
             return render_template("/auth/login.html",email="Email not found")
         # verify infos
         if  not check_password_hash(user.password,password):
             return render_template("/auth/login.html",password="Wrong password")
         login_user(user) # use the primary key
-        return f"==> LOGIN {Email} : {password}"
+        return render_template("home.html",total_students=0)
     return render_template("/auth/login.html")
 
 
@@ -61,4 +60,4 @@ def register():
 @auth_bp.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for("login"))
+    return redirect(url_for("auth.login"))
