@@ -2,4 +2,5 @@ app/logs
 env/
 .env
 venv
-*.pyc
+app/auth/__pycache__/
+app/logs/main.log

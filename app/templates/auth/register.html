@@ -39,15 +39,8 @@
     </div>
 
     <div class="field">
-      <label>Grade / Level</label>
-      <select name="grade">
-        <option value="">Select your grade</option>
-        <option>1st Year</option>
-        <option>2nd Year</option>
-        <option>3rd Year</option>
-        <option>4th Year</option>
-        <option>5th Year</option>
-      </select>
+      <label>Date of Birth</label>
+      <input type="date" name="birth" required>
     </div>
 
     <div class="field">
@@ -57,8 +50,6 @@
 
     <button class="btn" type="submit">Create Account →</button>
   </form>
-
-
   <div class="footer" style="margin-top: 16px;">
     Already have an account? <a href="{{ url_for('auth.login') }}">Sign in</a>
   </div>

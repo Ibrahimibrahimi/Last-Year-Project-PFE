@@ -18,7 +18,7 @@ def login() :
         user = User.query.filter_by(email=Email).first()
         if not user : # NOT EXIST = NONE => REDIRECT
             logout_user()
-            return render_template("login.html",email="Email not found")
+            return render_template("/auth/login.html",email="Email not found")
         # verify infos
         if  check_password_hash(user.password,password):
             return render_template("login.html",password="Wrong password")
