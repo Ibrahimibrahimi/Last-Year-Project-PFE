@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLearn — Master Any Language, Free Forever</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/landing.css')}}">
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-mark" style="background:var(--lime);">&lt;/&gt;</div>
+            <span class="nav-logo-text">Code<span>Learn</span></span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#languages" class="nav-link">Languages</a>
+            <a href="#curriculum" class="nav-link">Curriculum</a>
+            <a href="#about" class="nav-link">About</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="btn-ghost-nav" onclick="window.location='/login'">Log In</button>
+            <button class="btn-lime" onclick="window.location='/register'">Get Started Free →</button>
+        </div>
+    </nav>
+
+
+    <!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+    <section style="position:relative;overflow:hidden;">
+        <div class="hero-glow"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Now with 120+ free courses
+                </div>
+
+                <h1 class="hero-title">
+                    Master Code.<br>
+                    <span class="italic">For Free.</span><br>
+                    <span class="stroke">Forever.</span>
+                </h1>
+
+                <p class="hero-sub">
+                    CodeLearn is the <strong>open educational platform</strong> where students master Python,
+                    JavaScript, Java and more — through structured lessons, real exercises, and a gamified experience.
+                    <strong>No paywalls. Ever.</strong>
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn-hero btn-hero-primary" onclick="window.location='/register'">
+                        Start Learning Free
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="btn-hero btn-hero-secondary" onclick="window.location='/courses'">
+                        Browse Courses
+                    </button>
+                </div>
+
+                <p class="hero-note">
+                    <span>✓</span> No credit card &nbsp;·&nbsp;
+                    <span>✓</span> No subscription &nbsp;·&nbsp;
+                    <span>✓</span> Forever free
+                </p>
+
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">42k+</div>
+                        <div class="hero-stat-lbl">Active Students</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">120+</div>
+                        <div class="hero-stat-lbl">Free Courses</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">12</div>
+                        <div class="hero-stat-lbl">Languages</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">4.9★</div>
+                        <div class="hero-stat-lbl">Avg. Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <span class="t-dot" style="background:#ff5f57"></span>
+                        <span class="t-dot" style="background:#ffbd2e"></span>
+                        <span class="t-dot" style="background:#28ca41"></span>
+                        <span class="t-title">python_lesson_05.py</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="t-line"><span class="t-cmt"># Lesson 5: Functions & Scope</span></div>
+                        <div class="t-line" style="margin-top:8px;"></div>
+                        <div class="t-line"><span class="t-kw">def</span> <span
+                                class="t-fn">calculate_grade</span>(<span class="t-cmd">score</span>):</div>
+                        <div class="t-line" style="padding-left:24px;"><span class="t-kw">if</span> score <span
+                                class="t-cmd">&gt;=</span> <span class="t-num">90</span>: <span
+                                class="t-kw">return</span> <span class="t-str">'A'</span></div>
+                        <div class="t-line" style="padding-left:24px;"><span class="t-kw">elif</span> score <span
+                                class="t-cmd">&gt;=</span> <span class="t-num">75</span>: <span
+                                class="t-kw">return</span> <span class="t-str">'B'</span></div>
+                        <div class="t-line" style="padding-left:24px;"><span class="t-kw">else</span>: <span
+                                class="t-kw">return</span> <span class="t-str">'F'</span></div>
+                        <div class="t-line" style="margin-top:8px;"></div>
+                        <div class="t-line"><span class="t-fn">print</span>(<span
+                                class="t-fn">calculate_grade</span>(<span class="t-num">82</span>))</div>
+                        <div class="t-line"
+                            style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,.06);">
+                            <span class="t-prompt">▶</span>
+                            <span class="t-out">B</span>
+                        </div>
+                        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></div>
+                    </div>
+                </div>
+
+                <div class="lang-pills" style="margin-top:14px;">
+                    <div class="lang-pill">🐍 Python</div>
+                    <div class="lang-pill">⚡ JavaScript</div>
+                    <div class="lang-pill">☕ Java</div>
+                    <div class="lang-pill">🔷 TypeScript</div>
+                    <div class="lang-pill">🦀 Rust</div>
+                    <div class="lang-pill">🐹 Go</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     LOGOS STRIP
+════════════════════════════════════════ -->
+    <div class="logos-strip">
+        <div class="logos-track">
+            <div class="logo-item"><span class="logo-icon">🐍</span> Python</div>
+            <div class="logo-item"><span class="logo-icon">⚡</span> JavaScript</div>
+            <div class="logo-item"><span class="logo-icon">☕</span> Java</div>
+            <div class="logo-item"><span class="logo-icon">🔷</span> TypeScript</div>
+            <div class="logo-item"><span class="logo-icon">⚙️</span> C++</div>
+            <div class="logo-item"><span class="logo-icon">🦀</span> Rust</div>
+            <div class="logo-item"><span class="logo-icon">🐹</span> Go</div>
+            <div class="logo-item"><span class="logo-icon">💎</span> Ruby</div>
+            <div class="logo-item"><span class="logo-icon">🐘</span> PHP</div>
+            <div class="logo-item"><span class="logo-icon">#</span> C#</div>
+            <div class="logo-item"><span class="logo-icon">🦉</span> Swift</div>
+            <div class="logo-item"><span class="logo-icon">🎯</span> Kotlin</div>
+            <!-- duplicate for seamless loop -->
+            <div class="logo-item"><span class="logo-icon">🐍</span> Python</div>
+            <div class="logo-item"><span class="logo-icon">⚡</span> JavaScript</div>
+            <div class="logo-item"><span class="logo-icon">☕</span> Java</div>
+            <div class="logo-item"><span class="logo-icon">🔷</span> TypeScript</div>
+            <div class="logo-item"><span class="logo-icon">⚙️</span> C++</div>
+            <div class="logo-item"><span class="logo-icon">🦀</span> Rust</div>
+            <div class="logo-item"><span class="logo-icon">🐹</span> Go</div>
+            <div class="logo-item"><span class="logo-icon">💎</span> Ruby</div>
+            <div class="logo-item"><span class="logo-icon">🐘</span> PHP</div>
+            <div class="logo-item"><span class="logo-icon">#</span> C#</div>
+            <div class="logo-item"><span class="logo-icon">🦉</span> Swift</div>
+            <div class="logo-item"><span class="logo-icon">🎯</span> Kotlin</div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+
+    <!-- ════════════════════════════════════════
+     FEATURES
+════════════════════════════════════════ -->
+    <section class="section" id="features">
+        <div class="reveal">
+            <div class="label-tag">Why CodeLearn</div>
+            <h2 class="section-title">Everything you need to<br><span class="italic">actually learn</span></h2>
+            <p class="section-sub">Not just tutorials — a full learning system with real exercises, progress tracking,
+                and a gamified loop that keeps you moving.</p>
+        </div>
+
+        <div class="features-grid reveal-stagger" style="margin-top:56px;">
+            <div class="feature-card">
+                <div class="feature-icon">📐</div>
+                <div class="feature-title">Structured Lessons</div>
+                <div class="feature-desc">Every course is carefully organized with progressive lessons — concept first,
+                    examples second, exercises third. No jumping around.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧩</div>
+                <div class="feature-title">Real Exercises</div>
+                <div class="feature-desc">MCQ, code challenges, fill-in-the-blank, and debugging tasks. Not passive
+                    watching — active thinking every lesson.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <div class="feature-title">XP & Streaks</div>
+                <div class="feature-desc">Earn XP on every correct answer, build daily streaks, level up your profile.
+                    Progress feels like a game because it should.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Instant Feedback</div>
+                <div class="feature-desc">Answers are checked instantly. Wrong answers reveal the correct solution with
+                    explanation — so failure becomes learning.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Progress Dashboard</div>
+                <div class="feature-desc">Track your progress across all languages. See which lessons are done, how much
+                    XP you've earned, and what to tackle next.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <div class="feature-title">100% Free</div>
+                <div class="feature-desc">Every course, every exercise, every feature. No freemium tricks, no premium
+                    tiers, no credit card. Free means free.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- ════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
+    <section class="section-full how-section" id="how">
+        <div class="section" style="padding-top:0;padding-bottom:0;">
+            <div class="reveal">
+                <div class="label-tag">The Process</div>
+                <h2 class="section-title">From zero to <span class="italic">shipping code</span></h2>
+                <p class="section-sub">A simple four-step loop that takes you from knowing nothing to building real
+                    things.</p>
+            </div>
+
+            <div class="steps-grid reveal-stagger" style="margin-top:56px;">
+                <div class="step-card">
+                    <div class="step-connector">1</div>
+                    <div class="step-num">01 —</div>
+                    <span class="step-icon">🎯</span>
+                    <div class="step-title">Pick a Language</div>
+                    <div class="step-desc">Choose from Python, JavaScript, Java, TypeScript, Go, Rust, C++, and more.
+                        Each language has its own structured course.</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-connector">2</div>
+                    <div class="step-num">02 —</div>
+                    <span class="step-icon">📖</span>
+                    <div class="step-title">Study the Lesson</div>
+                    <div class="step-desc">Read the concept explanation, study the code example with syntax
+                        highlighting. Understand before you practice.</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-connector">3</div>
+                    <div class="step-num">03 —</div>
+                    <span class="step-icon">✏️</span>
+                    <div class="step-title">Solve Exercises</div>
+                    <div class="step-desc">Answer MCQs, write code, fill blanks, fix bugs. Every exercise earns XP.
+                        Hints available when you're stuck.</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04 —</div>
+                    <span class="step-icon">🚀</span>
+                    <div class="step-title">Level Up & Repeat</div>
+                    <div class="step-desc">Complete lessons, earn XP, level up your profile, and unlock the next lesson.
+                        Then do it again until you're fluent.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- ════════════════════════════════════════
+     LANGUAGES
+════════════════════════════════════════ -->
+    <section class="section" id="languages">
+        <div class="reveal">
+            <div class="label-tag">12 Languages</div>
+            <h2 class="section-title">Whatever you want to <span class="italic">build</span>,<br>we've got the language
+            </h2>
+            <p class="section-sub">From beginner-friendly Python to systems-level Rust — every language you'll ever
+                need, all free.</p>
+        </div>
+
+        <div class="languages-grid reveal-stagger" style="margin-top:56px;">
+            <div class="lang-card"><span class="lang-emoji">🐍</span>
+                <div class="lang-name">Python</div>
+                <div class="lang-count">64 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">⚡</span>
+                <div class="lang-name">JavaScript</div>
+                <div class="lang-count">82 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">🔷</span>
+                <div class="lang-name">TypeScript</div>
+                <div class="lang-count">96 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">☕</span>
+                <div class="lang-name">Java</div>
+                <div class="lang-count">112 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">⚙️</span>
+                <div class="lang-name">C++</div>
+                <div class="lang-count">120 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">🐹</span>
+                <div class="lang-name">Go</div>
+                <div class="lang-count">74 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">🦀</span>
+                <div class="lang-name">Rust</div>
+                <div class="lang-count">98 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">🐘</span>
+                <div class="lang-name">PHP</div>
+                <div class="lang-count">90 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">💎</span>
+                <div class="lang-name">Ruby</div>
+                <div class="lang-count">68 lessons</div>
+            </div>
+            <div class="lang-card"><span class="lang-emoji">#</span>
+                <div class="lang-name">C#</div>
+                <div class="lang-count">88 lessons</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- ════════════════════════════════════════
+     CURRICULUM PREVIEW
+════════════════════════════════════════ -->
+    <section class="section" id="curriculum">
+        <div class="reveal">
+            <div class="label-tag">Course Structure</div>
+            <h2 class="section-title">A curriculum built by<br><span class="italic">students, for students</span></h2>
+            <p class="section-sub">Every lesson is ordered, explained, and exercised. No gaps, no ambiguity — just a
+                clear path from nothing to competent.</p>
+        </div>
+
+        <div class="curriculum-wrap" style="margin-top:56px;">
+            <div class="curriculum-list reveal">
+                <div class="curr-item active" onclick="setLesson(this, 0)">
+                    <span class="curr-num">01</span>
+                    <span class="curr-title">Hello World & Print</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 1)">
+                    <span class="curr-num">02</span>
+                    <span class="curr-title">Variables & Data Types</span>
+                    <span class="curr-lessons">4 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 2)">
+                    <span class="curr-num">03</span>
+                    <span class="curr-title">String Operations</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 3)">
+                    <span class="curr-num">04</span>
+                    <span class="curr-title">User Input</span>
+                    <span class="curr-lessons">2 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 4)">
+                    <span class="curr-num">05</span>
+                    <span class="curr-title">Operators</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 5)">
+                    <span class="curr-num">06</span>
+                    <span class="curr-title">Conditions & if/else</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 6)">
+                    <span class="curr-num">07</span>
+                    <span class="curr-title">Loops (for & while)</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 7)">
+                    <span class="curr-num">08</span>
+                    <span class="curr-title">Lists</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 8)">
+                    <span class="curr-num">09</span>
+                    <span class="curr-title">Dictionaries</span>
+                    <span class="curr-lessons">2 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 9)">
+                    <span class="curr-num">10</span>
+                    <span class="curr-title">Functions</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 10)">
+                    <span class="curr-num">11</span>
+                    <span class="curr-title">File Handling</span>
+                    <span class="curr-lessons">2 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 11)">
+                    <span class="curr-num">12</span>
+                    <span class="curr-title">Classes & OOP</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+                <div class="curr-item" onclick="setLesson(this, 12)">
+                    <span class="curr-num">13</span>
+                    <span class="curr-title">Error Handling</span>
+                    <span class="curr-lessons">3 exercises</span>
+                </div>
+            </div>
+
+            <div class="curriculum-preview reveal" id="currPreview">
+                <div class="preview-header">
+                    <span class="preview-icon">🐍</span>
+                    <span class="preview-title" id="prevTitle">Hello World & Print</span>
+                </div>
+                <div class="preview-body">
+                    <p class="preview-desc" id="prevDesc">The print() function displays output to the screen. It is the
+                        first step in any Python program. You'll learn to print strings, numbers, and variables.</p>
+                    <div class="preview-tags" id="prevTags">
+                        <span class="preview-tag">print()</span>
+                        <span class="preview-tag">output</span>
+                        <span class="preview-tag">strings</span>
+                    </div>
+                    <div class="preview-meta">
+                        <div class="preview-meta-item">
+                            <span class="meta-val" id="prevEx">3</span>
+                            <span class="meta-lbl">Exercises</span>
+                        </div>
+                        <div class="preview-meta-item">
+                            <span class="meta-val" id="prevXp">15</span>
+                            <span class="meta-lbl">Max XP</span>
+                        </div>
+                        <div class="preview-meta-item">
+                            <span class="meta-val" id="prevDiff">Easy</span>
+                            <span class="meta-lbl">Difficulty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- ════════════════════════════════════════
+     STATS BANNER
+════════════════════════════════════════ -->
+    <div class="stats-banner reveal">
+        <div class="stats-banner-inner">
+            <div class="stats-left">
+                <h2>The numbers<br>speak for themselves.</h2>
+                <p>CodeLearn is already trusted by thousands of students learning to code for free.</p>
+            </div>
+            <div class="stats-numbers">
+                <div class="stat-big">
+                    <div class="stat-big-num">42k+</div>
+                    <div class="stat-big-lbl">Students</div>
+                </div>
+                <div class="stat-big">
+                    <div class="stat-big-num">120+</div>
+                    <div class="stat-big-lbl">Courses</div>
+                </div>
+                <div class="stat-big">
+                    <div class="stat-big-num">8.4k+</div>
+                    <div class="stat-big-lbl">Exercises</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+    <section class="section">
+        <div class="reveal">
+            <div class="label-tag">Student Reviews</div>
+            <h2 class="section-title">What students<br><span class="italic">actually say</span></h2>
+            <p class="section-sub">Real feedback from real learners who went from zero to building projects.</p>
+        </div>
+
+        <div class="testimonials-grid reveal-stagger" style="margin-top:56px;">
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">I tried three other platforms before CodeLearn. They all had the same problem —
+                    <em>you have to pay to actually learn</em>. Here everything is free and the quality is honestly
+                    better.
+                </p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#c6f135,#4dff9a);">AY</div>
+                    <div>
+                        <div class="testi-name">Aya Benali</div>
+                        <div class="testi-role">CS Student, Casablanca</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">The XP system and streaks made me actually <em>want to open the app every
+                        day</em>. I finished the Python course in 3 weeks because it felt like a game.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#4d9fff,#bf4dff);">MH</div>
+                    <div>
+                        <div class="testi-name">Mohamed H.</div>
+                        <div class="testi-role">Self-taught Developer</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">The MCQ format with instant feedback is brilliant. When I get something wrong, it
+                    shows me why immediately. <em>That's how you actually learn</em> — not passive video watching.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar" style="background:linear-gradient(135deg,#ff9f4d,#ff4d4d);">SZ</div>
+                    <div>
+                        <div class="testi-name">Sara Ziani</div>
+                        <div class="testi-role">Junior Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- ════════════════════════════════════════
+     CTA
+════════════════════════════════════════ -->
+    <section class="cta-section" id="about">
+        <div class="cta-glow"></div>
+        <div class="label-tag" style="justify-content:center; display:inline-flex;">Start Today</div>
+        <h2 class="cta-title reveal">
+            Stop watching.<br>
+            Start <span class="italic">coding</span>.
+        </h2>
+        <p class="cta-sub reveal">Join 42,000+ students already learning for free. Pick a language, open a lesson, and
+            write your first line of code — right now.</p>
+        <div class="cta-actions reveal">
+            <button class="btn-cta-primary" onclick="window.location='/register'">
+                Create Free Account
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M3.5 9h11M10 5l4.5 4L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="btn-cta-secondary" onclick="window.location='/login'">
+                Already have an account? Log in
+            </button>
+        </div>
+        <p class="cta-note reveal">
+            <span>✓</span> Free forever &nbsp;·&nbsp;
+            <span>✓</span> No credit card &nbsp;·&nbsp;
+            <span>✓</span> Start in 30 seconds
+        </p>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <a href="#" class="nav-logo" style="margin-bottom:14px; display:inline-flex;">
+                    <div class="nav-logo-mark" style="background:var(--lime);">&lt;/&gt;</div>
+                    <span class="nav-logo-text">Code<span>Learn</span></span>
+                </a>
+                <p class="footer-brand-desc">Free programming education for every student. Built as a final year project
+                    by CS students who believe knowledge should be open.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <div class="footer-col-title">Platform</div>
+                    <a href="#">Courses</a>
+                    <a href="#">Languages</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Leaderboard</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Languages</div>
+                    <a href="#">Python</a>
+                    <a href="#">JavaScript</a>
+                    <a href="#">Java</a>
+                    <a href="#">TypeScript</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Account</div>
+                    <a href="/register">Sign Up Free</a>
+                    <a href="/login">Log In</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Project</div>
+                    <a href="#">About</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 CodeLearn — PFE Project. <span>Free education for everyone.</span></span>
+            <span>Built with ❤️ by CS students</span>
+        </div>
+    </footer>
+
+
+    <!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+    <script>
+        /* ── Navbar scroll shadow ── */
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        /* ── Scroll reveal ── */
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+        /* ── Curriculum lesson picker ── */
+        const lessons = [
+            { title: 'Hello World & Print', desc: 'The print() function displays output to the screen. Learn to print strings, numbers, and variables — the foundation of every Python program.', tags: ['print()', 'output', 'strings'], ex: 3, xp: 15, diff: 'Easy' },
+            { title: 'Variables & Data Types', desc: 'Variables store data and Python infers types automatically. Learn int, float, str, bool, and how to use type() to inspect values.', tags: ['int', 'float', 'str', 'bool'], ex: 4, xp: 25, diff: 'Easy' },
+            { title: 'String Operations', desc: 'Strings can be concatenated with +, measured with len(), sliced with indexing, and formatted with f-strings. Master all core string operations.', tags: ['len()', 'f-strings', 'concat', 'slice'], ex: 3, xp: 20, diff: 'Easy' },
+            { title: 'User Input', desc: 'input() reads text from the user. It always returns a string — learn to convert with int() or float() when you need numbers.', tags: ['input()', 'int()', 'float()'], ex: 2, xp: 15, diff: 'Easy' },
+            { title: 'Operators', desc: 'Arithmetic: +,-,*,/,//,%,**. Comparison: ==,!=,<,>. Logical: and, or, not. Master the operators that power every calculation in Python.', tags: ['arithmetic', 'comparison', 'logical', '%', '**'], ex: 3, xp: 20, diff: 'Medium' },
+            { title: 'Conditions & if/else', desc: 'if runs when a condition is True. elif adds extra checks. else is the fallback. Indentation is mandatory — understand how Python uses whitespace.', tags: ['if', 'elif', 'else', 'conditions'], ex: 3, xp: 30, diff: 'Easy' },
+            { title: 'Loops (for & while)', desc: 'for iterates over sequences. while runs while a condition is True. break exits early, continue skips. Build loops that handle real repetitive tasks.', tags: ['for', 'while', 'range()', 'break', 'continue'], ex: 3, xp: 35, diff: 'Medium' },
+            { title: 'Lists', desc: 'Lists hold ordered mutable collections. Use indexing, append(), remove(), sort(), and len(). Combine with loops to process collections of data.', tags: ['list', 'append()', 'sort()', 'index'], ex: 3, xp: 20, diff: 'Easy' },
+            { title: 'Dictionaries', desc: 'Dictionaries store key-value pairs. Access with keys, iterate with .items(), safe access with .get(). The most versatile data structure in Python.', tags: ['dict', 'keys()', 'values()', 'items()'], ex: 2, xp: 20, diff: 'Medium' },
+            { title: 'Functions', desc: 'Functions are reusable blocks. Use def, parameters, return values, and default parameters. Write clean, DRY code that you can call from anywhere.', tags: ['def', 'return', 'params', 'scope'], ex: 3, xp: 25, diff: 'Easy' },
+            { title: 'File Handling', desc: 'Use open() with modes r, w, a. Always use the with statement to auto-close files. Read, write, and append to files safely and idiomatically.', tags: ["open()", 'read()', 'write()', '"w"', '"r"', '"a"'], ex: 2, xp: 15, diff: 'Medium' },
+            { title: 'Classes & OOP', desc: 'Classes are blueprints for objects. __init__ is the constructor, self refers to the instance. Write object-oriented code with attributes and methods.', tags: ['class', 'self', '__init__', 'methods'], ex: 3, xp: 40, diff: 'Hard' },
+            { title: 'Error Handling', desc: 'try/except catches errors and prevents crashes. finally always runs. Raise custom errors with raise. Write robust code that handles the unexpected.', tags: ['try', 'except', 'finally', 'raise', 'ValueError'], ex: 3, xp: 30, diff: 'Medium' },
+        ];
+
+        function setLesson(el, idx) {
+            document.querySelectorAll('.curr-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+            const l = lessons[idx];
+            document.getElementById('prevTitle').textContent = l.title;
+            document.getElementById('prevDesc').textContent = l.desc;
+            document.getElementById('prevEx').textContent = l.ex;
+            document.getElementById('prevXp').textContent = l.xp + ' XP';
+            document.getElementById('prevDiff').textContent = l.diff;
+            const tagsEl = document.getElementById('prevTags');
+            tagsEl.innerHTML = l.tags.map(t => `<span class="preview-tag">${t}</span>`).join('');
+        }
+
+        /* ── Smooth scroll for nav links ── */
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
