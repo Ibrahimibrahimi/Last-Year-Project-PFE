@@ -3,12 +3,9 @@ from flask_login import login_required
 from flask import render_template
 
 
-@main_bp.route("/home")
-@login_required
-def home():
-
-    return render_template("index.html")
-
+@main_bp.route("/")
+def index():
+    return render_template("landing.html")
 
 @main_bp.route("/courses")
 @login_required
