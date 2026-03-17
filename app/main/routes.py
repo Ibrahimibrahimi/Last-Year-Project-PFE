@@ -1,12 +1,20 @@
 from . import main_bp
 from flask_login import login_required
 from flask import render_template
-from .loader import getLangs
+import os
+from app.models import User
 
 
 @main_bp.route("/")
 def index():
-    return render_template("landing.html",langs=getLangs())
+
+    N_LANGS = len(os.listdir("app/data"))
+    N_LESSONS = len(os.listdir("app/data"))
+    N_STUDENT = User.query.count()
+    return render_template("landing.html",
+                           n_langs=N_LANGS,
+                           n_lessons=N_LESSONS,
+                           n_students=N_STUDENT)
 
 
 @main_bp.route("/courses")
