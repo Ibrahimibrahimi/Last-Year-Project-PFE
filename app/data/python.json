@@ -1,7 +1,7 @@
 {
     "id": "python",
     "name": "Python",
-    "icon": "python.png",
+    "icon": "langs/python.svg",
     "description": "A versatile beginner-friendly language used in web, data science, automation, and AI.",
     "lessons": [
         {
