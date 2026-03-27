@@ -1,0 +1,112 @@
+{
+  "id": "bash",
+  "name": "Bash",
+  "icon": "langs/bash.svg",
+  "description": "The Unix shell scripting language. Automate tasks, write scripts, and master the command line.",
+  "lessons": [
+    {
+      "id": "bash-les-01",
+      "order": 1,
+      "title": "Your First Script & echo",
+      "content": "Bash scripts start with a shebang line (#!/bin/bash) that tells the OS which interpreter to use. The echo command prints output. Variables are assigned without spaces around =, and accessed with $.",
+      "code_example": "#!/bin/bash\n\necho \"Hello, World!\"\n\n# Variables\nname=\"Alice\"\necho \"Hello, $name!\"\n\n# Arithmetic\nresult=$((3 + 4))\necho \"3 + 4 = $result\"",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "bash-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What is the first line of a Bash script called?",
+          "options": ["Header", "Import", "Shebang", "Docstring"],
+          "answer": "Shebang",
+          "hints": ["#!/bin/bash — the #! is pronounced 'shebang'"]
+        },
+        {
+          "id": "bash-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "How do you access a variable named 'name' in Bash?",
+          "options": ["name", "@name", "%name%", "$name"],
+          "answer": "$name",
+          "hints": ["Dollar sign prefix: echo $name"]
+        }
+      ]
+    },
+    {
+      "id": "bash-les-02",
+      "order": 2,
+      "title": "Conditionals & Loops",
+      "content": "Bash if statements use [[ ]] for conditions. Comparison operators: -eq (equal), -ne (not equal), -gt (greater than), -lt (less than). For loops iterate over lists or ranges.",
+      "code_example": "#!/bin/bash\n\nscore=75\n\nif [[ $score -ge 90 ]]; then\n    echo \"Excellent!\"\nelif [[ $score -ge 60 ]]; then\n    echo \"Good job!\"\nelse\n    echo \"Keep practicing!\"\nfi\n\n# For loop\nfor i in 1 2 3 4 5; do\n    echo \"Number: $i\"\ndone",
+      "xp": 20,
+      "lessons_required": ["bash-les-01"],
+      "exercises": [
+        {
+          "id": "bash-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which operator checks if two numbers are equal in Bash?",
+          "options": ["==", "=", "-eq", "-is"],
+          "answer": "-eq",
+          "hints": ["Numeric: -eq, -ne, -gt, -lt. String: == !="]
+        }
+      ]
+    },
+    {
+      "id": "bash-les-03",
+      "order": 3,
+      "title": "Functions & Arguments",
+      "content": "Bash functions group commands. Arguments are accessed with $1, $2, etc. $@ holds all arguments. $# is the count. Functions return exit codes (0 = success) with 'return', not values.",
+      "code_example": "#!/bin/bash\n\ngreet() {\n    local name=$1\n    echo \"Hello, $name!\"\n}\n\ngreet \"Alice\"\ngreet \"Bob\"\n\n# Script arguments\necho \"Script: $0\"\necho \"First arg: $1\"\necho \"All args: $@\"\necho \"Count: $#\"",
+      "xp": 20,
+      "lessons_required": ["bash-les-02"],
+      "exercises": [
+        {
+          "id": "bash-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does $1 refer to in a Bash function or script?",
+          "options": ["The script name", "The first argument", "The process ID", "The last command exit code"],
+          "answer": "The first argument",
+          "hints": ["$0 = script name, $1 = first argument, $2 = second..."]
+        }
+      ]
+    },
+    {
+      "id": "bash-les-04",
+      "order": 4,
+      "title": "File Operations & Piping",
+      "content": "Bash excels at file operations and connecting commands with pipes (|). The pipe sends the output of one command as input to the next. Redirection: > writes to a file, >> appends, < reads from a file.",
+      "code_example": "#!/bin/bash\n\n# List files sorted by size\nls -lh | sort -k5 -h\n\n# Count lines in a file\nwc -l < data.txt\n\n# Write to file\necho \"Hello\" > output.txt\necho \"World\" >> output.txt\n\n# Search in files\ngrep \"error\" log.txt | head -10",
+      "xp": 25,
+      "lessons_required": ["bash-les-03"],
+      "exercises": [
+        {
+          "id": "bash-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does the | (pipe) operator do in Bash?",
+          "options": [
+            "Writes output to a file",
+            "Sends output of one command as input to the next",
+            "Runs two commands in parallel",
+            "Compares two values"
+          ],
+          "answer": "Sends output of one command as input to the next",
+          "hints": ["ls | grep '.txt' — filter ls output with grep"]
+        }
+      ]
+    }
+  ]
+}

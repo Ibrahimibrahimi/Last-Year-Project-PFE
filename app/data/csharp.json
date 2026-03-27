@@ -1,0 +1,112 @@
+{
+  "id": "csharp",
+  "name": "C#",
+  "icon": "langs/csharp.svg",
+  "description": "Microsoft's elegant OOP language powering .NET apps, game development with Unity, and enterprise software.",
+  "lessons": [
+    {
+      "id": "cs-les-01",
+      "order": 1,
+      "title": "Hello World & Console",
+      "content": "C# programs are organized into namespaces and classes. The Main method is the entry point. Console.WriteLine() outputs text to the console. C# is strongly typed and runs on the .NET runtime.",
+      "code_example": "using System;\n\nclass Program {\n    static void Main(string[] args) {\n        Console.WriteLine(\"Hello, World!\");\n        Console.WriteLine(42);\n        Console.WriteLine($\"1 + 1 = {1 + 1}\");\n    }\n}",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "cs-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which method prints a line to the console in C#?",
+          "options": ["Console.Print()", "Console.WriteLine()", "System.out.println()", "print()"],
+          "answer": "Console.WriteLine()",
+          "hints": ["It is part of the System.Console class"]
+        },
+        {
+          "id": "cs-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What prefix creates an interpolated string in C#?",
+          "options": ["#", "@", "$", "%"],
+          "answer": "$",
+          "hints": ["$\"Hello {name}\" — the $ makes it interpolated"]
+        }
+      ]
+    },
+    {
+      "id": "cs-les-02",
+      "order": 2,
+      "title": "Classes & Properties",
+      "content": "C# classes support properties — special members that expose private fields with get/set accessors. Auto-properties generate the backing field automatically. This is a core C# pattern.",
+      "code_example": "class Person {\n    public string Name { get; set; }\n    public int Age { get; private set; }\n\n    public Person(string name, int age) {\n        Name = name;\n        Age = age;\n    }\n\n    public string Introduce() =>\n        $\"Hi, I'm {Name}, {Age} years old.\";\n}\n\nvar p = new Person(\"Alice\", 28);\nConsole.WriteLine(p.Introduce());",
+      "xp": 20,
+      "lessons_required": ["cs-les-01"],
+      "exercises": [
+        {
+          "id": "cs-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does 'public int Age { get; private set; }' mean?",
+          "options": [
+            "Age can be read and written from anywhere",
+            "Age can be read from anywhere but only set inside the class",
+            "Age is only accessible inside the class",
+            "Age is a static field"
+          ],
+          "answer": "Age can be read from anywhere but only set inside the class",
+          "hints": ["private set restricts writing to within the class"]
+        }
+      ]
+    },
+    {
+      "id": "cs-les-03",
+      "order": 3,
+      "title": "LINQ — Language Integrated Query",
+      "content": "LINQ lets you query collections with SQL-like syntax directly in C#. Use .Where() to filter, .Select() to transform, .OrderBy() to sort, and .FirstOrDefault() to get one element.",
+      "code_example": "using System.Linq;\n\nvar numbers = new[] { 1, 2, 3, 4, 5, 6 };\n\nvar evens = numbers.Where(n => n % 2 == 0);\nvar doubled = numbers.Select(n => n * 2);\nvar first = numbers.FirstOrDefault(n => n > 3);\n\nConsole.WriteLine(string.Join(\", \", evens));   // 2, 4, 6\nConsole.WriteLine(string.Join(\", \", doubled)); // 2,4,6,8,10,12\nConsole.WriteLine(first);                      // 4",
+      "xp": 25,
+      "lessons_required": ["cs-les-02"],
+      "exercises": [
+        {
+          "id": "cs-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which LINQ method filters elements based on a condition?",
+          "options": ["Select()", "OrderBy()", "Where()", "GroupBy()"],
+          "answer": "Where()",
+          "hints": ["Like SQL WHERE — it keeps only matching elements"]
+        }
+      ]
+    },
+    {
+      "id": "cs-les-04",
+      "order": 4,
+      "title": "Async / Await",
+      "content": "C# async/await makes asynchronous programming straightforward. Mark a method with 'async', use 'await' on Tasks, and the compiler handles the rest. This keeps UIs responsive and servers efficient.",
+      "code_example": "using System.Net.Http;\n\nasync Task<string> FetchAsync(string url) {\n    using var client = new HttpClient();\n    return await client.GetStringAsync(url);\n}\n\nasync Task Main() {\n    var html = await FetchAsync(\"https://example.com\");\n    Console.WriteLine(html.Length + \" chars\");\n}",
+      "xp": 30,
+      "lessons_required": ["cs-les-03"],
+      "exercises": [
+        {
+          "id": "cs-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "hard",
+          "xp": 15,
+          "question": "What return type should an async method that returns a string use?",
+          "options": ["string", "async string", "Task<string>", "Promise<string>"],
+          "answer": "Task<string>",
+          "hints": ["async methods wrap their return type in Task<>"]
+        }
+      ]
+    }
+  ]
+}

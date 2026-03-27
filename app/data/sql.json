@@ -1,0 +1,140 @@
+{
+  "id": "sql",
+  "name": "SQL",
+  "icon": "langs/sql.svg",
+  "description": "Structured Query Language for managing and querying relational databases. Used everywhere data is stored.",
+  "lessons": [
+    {
+      "id": "sql-les-01",
+      "order": 1,
+      "title": "SELECT & FROM",
+      "content": "SQL SELECT retrieves data from a table. The FROM clause specifies the table. Use * to select all columns or list specific column names separated by commas.",
+      "code_example": "-- Select all columns\nSELECT * FROM users;\n\n-- Select specific columns\nSELECT name, email FROM users;\n\n-- With alias\nSELECT name AS full_name FROM users;",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "sql-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which SQL clause specifies the table to query?",
+          "options": ["SELECT", "WHERE", "FROM", "TABLE"],
+          "answer": "FROM",
+          "hints": ["It comes right after SELECT"]
+        },
+        {
+          "id": "sql-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What does SELECT * mean?",
+          "options": ["Select no columns", "Select all columns", "Select the first column", "Multiply values"],
+          "answer": "Select all columns",
+          "hints": ["The asterisk is a wildcard meaning 'everything'"]
+        }
+      ]
+    },
+    {
+      "id": "sql-les-02",
+      "order": 2,
+      "title": "WHERE & Filtering",
+      "content": "The WHERE clause filters rows based on conditions. Use comparison operators (=, !=, >, <, >=, <=) and logical operators (AND, OR, NOT). LIKE is used for pattern matching with % as wildcard.",
+      "code_example": "-- Exact match\nSELECT * FROM users WHERE age = 25;\n\n-- Range\nSELECT * FROM products WHERE price > 100;\n\n-- Pattern match\nSELECT * FROM users WHERE name LIKE 'A%';\n\n-- Multiple conditions\nSELECT * FROM orders WHERE status = 'pending' AND total > 50;",
+      "xp": 15,
+      "lessons_required": ["sql-les-01"],
+      "exercises": [
+        {
+          "id": "sql-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which SQL clause is used to filter rows?",
+          "options": ["FILTER", "HAVING", "WHERE", "LIMIT"],
+          "answer": "WHERE",
+          "hints": ["It comes after FROM"]
+        },
+        {
+          "id": "sql-ex-02-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does WHERE name LIKE 'A%' match?",
+          "options": ["Names ending with A", "Names containing A anywhere", "Names starting with A", "Names equal to 'A%'"],
+          "answer": "Names starting with A",
+          "hints": ["% matches any sequence of characters"]
+        }
+      ]
+    },
+    {
+      "id": "sql-les-03",
+      "order": 3,
+      "title": "ORDER BY, LIMIT & OFFSET",
+      "content": "ORDER BY sorts results. Use ASC (ascending, default) or DESC (descending). LIMIT restricts the number of rows returned. OFFSET skips a number of rows, useful for pagination.",
+      "code_example": "-- Sort by price descending\nSELECT * FROM products ORDER BY price DESC;\n\n-- Top 5 newest users\nSELECT * FROM users ORDER BY created_at DESC LIMIT 5;\n\n-- Pagination: page 2, 10 per page\nSELECT * FROM products LIMIT 10 OFFSET 10;",
+      "xp": 15,
+      "lessons_required": ["sql-les-02"],
+      "exercises": [
+        {
+          "id": "sql-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which keyword sorts results from highest to lowest?",
+          "options": ["ASC", "DESC", "TOP", "MAX"],
+          "answer": "DESC",
+          "hints": ["Short for descending"]
+        }
+      ]
+    },
+    {
+      "id": "sql-les-04",
+      "order": 4,
+      "title": "JOIN — Combining Tables",
+      "content": "JOIN combines rows from two or more tables based on a related column. INNER JOIN returns only matching rows. LEFT JOIN returns all rows from the left table plus matches from the right.",
+      "code_example": "-- INNER JOIN\nSELECT orders.id, users.name\nFROM orders\nINNER JOIN users ON orders.user_id = users.id;\n\n-- LEFT JOIN (includes users with no orders)\nSELECT users.name, orders.total\nFROM users\nLEFT JOIN orders ON users.id = orders.user_id;",
+      "xp": 25,
+      "lessons_required": ["sql-les-03"],
+      "exercises": [
+        {
+          "id": "sql-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which JOIN returns only rows that have matches in BOTH tables?",
+          "options": ["LEFT JOIN", "RIGHT JOIN", "INNER JOIN", "FULL JOIN"],
+          "answer": "INNER JOIN",
+          "hints": ["It is the most restrictive join — both sides must match"]
+        }
+      ]
+    },
+    {
+      "id": "sql-les-05",
+      "order": 5,
+      "title": "GROUP BY & Aggregate Functions",
+      "content": "Aggregate functions compute a value from multiple rows: COUNT(), SUM(), AVG(), MIN(), MAX(). GROUP BY groups rows sharing a value so aggregates apply per group. HAVING filters groups (like WHERE but for aggregates).",
+      "code_example": "-- Count users per country\nSELECT country, COUNT(*) AS total\nFROM users\nGROUP BY country;\n\n-- Average order value per customer\nSELECT user_id, AVG(total) AS avg_order\nFROM orders\nGROUP BY user_id\nHAVING AVG(total) > 100;",
+      "xp": 25,
+      "lessons_required": ["sql-les-04"],
+      "exercises": [
+        {
+          "id": "sql-ex-05-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which clause filters the results of a GROUP BY?",
+          "options": ["WHERE", "FILTER", "HAVING", "LIMIT"],
+          "answer": "HAVING",
+          "hints": ["WHERE filters rows before grouping; this filters after"]
+        }
+      ]
+    }
+  ]
+}

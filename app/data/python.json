@@ -1,653 +1,96 @@
 {
-    "id": "python",
-    "name": "Python",
-    "icon": "langs/python.svg",
-    "description": "A versatile beginner-friendly language used in web, data science, automation, and AI.",
-    "lessons": [
+  "id": "python",
+  "name": "Python",
+  "icon": "langs/python.svg",
+  "description": "A versatile beginner-friendly language used in web development, data science, automation, and AI.",
+  "lessons": [
+    {
+      "id": "py-les-01",
+      "order": 1,
+      "title": "Hello World & Print",
+      "content": "The print() function displays output to the screen. It is the first step in any Python program. You can print text (strings), numbers, and even results of expressions.",
+      "code_example": "print('Hello, World!')\nprint(42)\nprint(3.14)\nprint('My name is', 'Alice')",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
         {
-            "id": "py-les-01",
-            "order": 1,
-            "title": "Hello World & Print",
-            "content": "The print() function displays output to the screen. It is the first step in any Python program.",
-            "code_example": "print('Hello, World!')\nprint(42)\nprint(3.14)",
-            "exercises": [
-                {
-                    "id": "py-ex-01-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Print the text 'I am learning Python'.",
-                    "starter_code": "# write here\n",
-                    "solution": "print('I am learning Python')",
-                    "hints": [
-                        "Use print() with text in quotes"
-                    ]
-                },
-                {
-                    "id": "py-ex-01-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Which function displays output in Python?",
-                    "options": [
-                        "display()",
-                        "print()",
-                        "output()",
-                        "show()"
-                    ],
-                    "answer": "print()",
-                    "hints": [
-                        "It is a built-in Python function"
-                    ]
-                },
-                {
-                    "id": "py-ex-01-03",
-                    "order": 3,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Print your name and age on two separate lines.",
-                    "starter_code": "# two print statements\n",
-                    "solution": "print('Aya')\nprint(20)",
-                    "hints": [
-                        "Call print() twice"
-                    ]
-                }
-            ]
+          "id": "py-ex-01-01",
+          "order": 1,
+          "type": "code",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Print the text 'I am learning Python'.",
+          "starter_code": "# Write your code here\n",
+          "solution": "print('I am learning Python')",
+          "hints": ["Use print() with the text in quotes"]
         },
         {
-            "id": "py-les-02",
-            "order": 2,
-            "title": "Variables & Data Types",
-            "content": "Variables store data. Python infers types automatically. Main types: int, float, str, bool.",
-            "code_example": "name = 'Aya'\nage = 20\nheight = 1.65\nis_student = True\nprint(type(age))",
-            "exercises": [
-                {
-                    "id": "py-ex-02-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Create a variable `city` with your city name and print it.",
-                    "starter_code": "# create and print\n",
-                    "solution": "city = 'Casablanca'\nprint(city)",
-                    "hints": [
-                        "Use = to assign",
-                        "Use quotes for text"
-                    ]
-                },
-                {
-                    "id": "py-ex-02-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "What is the type of 3.14?",
-                    "options": [
-                        "int",
-                        "float",
-                        "str",
-                        "bool"
-                    ],
-                    "answer": "float",
-                    "hints": [
-                        "It has a decimal point"
-                    ]
-                },
-                {
-                    "id": "py-ex-02-03",
-                    "order": 3,
-                    "type": "fill",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Fill in: `is_open = ___` to store True.",
-                    "answer": "True",
-                    "hints": [
-                        "Booleans are capitalized in Python"
-                    ]
-                },
-                {
-                    "id": "py-ex-02-04",
-                    "order": 4,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Declare an int, float, and string variable. Print all three.",
-                    "starter_code": "# three variables\n",
-                    "solution": "x = 5\ny = 2.5\nz = 'hello'\nprint(x, y, z)",
-                    "hints": [
-                        "Each type has a different format"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-03",
-            "order": 3,
-            "title": "String Operations",
-            "content": "Strings can be concatenated with +, measured with len(), sliced, and formatted with f-strings.",
-            "code_example": "name = 'Aya'\nprint('Hello ' + name)\nprint(len(name))\nprint(f'Name has {len(name)} letters')\nprint(name.upper())",
-            "exercises": [
-                {
-                    "id": "py-ex-03-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Concatenate 'Hello' and 'World' with a space and print.",
-                    "starter_code": "a = 'Hello'\nb = 'World'\n",
-                    "solution": "a = 'Hello'\nb = 'World'\nprint(a + ' ' + b)",
-                    "hints": [
-                        "Use + to join strings"
-                    ]
-                },
-                {
-                    "id": "py-ex-03-02",
-                    "order": 2,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Print the length of the string 'programming'.",
-                    "starter_code": "word = 'programming'\n",
-                    "solution": "print(len('programming'))",
-                    "hints": [
-                        "Use len()"
-                    ]
-                },
-                {
-                    "id": "py-ex-03-03",
-                    "order": 3,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Use an f-string to print 'My age is 20' using a variable.",
-                    "starter_code": "age = 20\n",
-                    "solution": "age = 20\nprint(f'My age is {age}')",
-                    "hints": [
-                        "Prefix the string with f",
-                        "Put variable in {}"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-04",
-            "order": 4,
-            "title": "User Input",
-            "content": "input() reads text from the user. It always returns a string — convert with int() or float() when needed.",
-            "code_example": "name = input('Your name: ')\nage = int(input('Your age: '))\nprint(f'Hello {name}, age {age}')",
-            "exercises": [
-                {
-                    "id": "py-ex-04-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Ask for a name and print 'Welcome, [name]!'",
-                    "starter_code": "# get input and print\n",
-                    "solution": "name = input('Name: ')\nprint(f'Welcome, {name}!')",
-                    "hints": [
-                        "Use input() then f-string"
-                    ]
-                },
-                {
-                    "id": "py-ex-04-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "What does input() always return?",
-                    "options": [
-                        "int",
-                        "float",
-                        "str",
-                        "bool"
-                    ],
-                    "answer": "str",
-                    "hints": [
-                        "Even numbers come back as text"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-05",
-            "order": 5,
-            "title": "Operators",
-            "content": "Arithmetic: +,-,*,/,//,%,**. Comparison: ==,!=,<,>. Logical: and, or, not.",
-            "code_example": "print(10 // 3)  # 3\nprint(10 % 3)   # 1\nprint(2 ** 8)   # 256\nprint(5 > 3 and 2 < 4)",
-            "exercises": [
-                {
-                    "id": "py-ex-05-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Print the remainder of 17 divided by 5.",
-                    "starter_code": "",
-                    "solution": "print(17 % 5)",
-                    "hints": [
-                        "Use %"
-                    ]
-                },
-                {
-                    "id": "py-ex-05-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "What does 2 ** 8 evaluate to?",
-                    "options": [
-                        "16",
-                        "64",
-                        "256",
-                        "512"
-                    ],
-                    "answer": "256",
-                    "hints": [
-                        "** is exponentiation"
-                    ]
-                },
-                {
-                    "id": "py-ex-05-03",
-                    "order": 3,
-                    "type": "debug",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Fix: should print True if x is between 0 and 100.",
-                    "broken_code": "x = 50\nprint(x > 0 or x < 100)",
-                    "solution": "x = 50\nprint(x > 0 and x < 100)",
-                    "hints": [
-                        "Both conditions must be true simultaneously"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-06",
-            "order": 6,
-            "title": "Conditions",
-            "content": "if runs when a condition is True. elif adds extra checks. else is the fallback. Indentation is mandatory.",
-            "code_example": "score = 75\nif score >= 90:\n    print('A')\nelif score >= 75:\n    print('B')\nelse:\n    print('F')",
-            "exercises": [
-                {
-                    "id": "py-ex-06-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Print 'Even' or 'Odd' for number = 7.",
-                    "starter_code": "number = 7\n",
-                    "solution": "number = 7\nif number % 2 == 0:\n    print('Even')\nelse:\n    print('Odd')",
-                    "hints": [
-                        "Use % 2"
-                    ]
-                },
-                {
-                    "id": "py-ex-06-02",
-                    "order": 2,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 15,
-                    "question": "Write a grade checker: A>=90, B>=75, C>=60, else F.",
-                    "starter_code": "score = 82\n",
-                    "solution": "score = 82\nif score >= 90:\n    print('A')\nelif score >= 75:\n    print('B')\nelif score >= 60:\n    print('C')\nelse:\n    print('F')",
-                    "hints": [
-                        "Use elif for each range"
-                    ]
-                },
-                {
-                    "id": "py-ex-06-03",
-                    "order": 3,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "What keyword handles additional conditions after if?",
-                    "options": [
-                        "else if",
-                        "elseif",
-                        "elif",
-                        "or if"
-                    ],
-                    "answer": "elif",
-                    "hints": [
-                        "Python-specific shorthand"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-07",
-            "order": 7,
-            "title": "Loops",
-            "content": "for iterates over sequences. while runs while condition is True. break exits, continue skips.",
-            "code_example": "for i in range(5):\n    print(i)\n\ncount = 0\nwhile count < 3:\n    print(count)\n    count += 1",
-            "exercises": [
-                {
-                    "id": "py-ex-07-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Print numbers 1 to 10 using a for loop.",
-                    "starter_code": "",
-                    "solution": "for i in range(1, 11):\n    print(i)",
-                    "hints": [
-                        "range(1, 11)"
-                    ]
-                },
-                {
-                    "id": "py-ex-07-02",
-                    "order": 2,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 15,
-                    "question": "Countdown from 5 to 1 then print 'Liftoff!' using while.",
-                    "starter_code": "count = 5\n",
-                    "solution": "count = 5\nwhile count > 0:\n    print(count)\n    count -= 1\nprint('Liftoff!')",
-                    "hints": [
-                        "Decrement count each loop"
-                    ]
-                },
-                {
-                    "id": "py-ex-07-03",
-                    "order": 3,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Print all even numbers from 2 to 20.",
-                    "starter_code": "",
-                    "solution": "for i in range(2, 21, 2):\n    print(i)",
-                    "hints": [
-                        "range() takes a step as third argument"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-08",
-            "order": 8,
-            "title": "Lists",
-            "content": "Lists hold ordered mutable collections. Use indexing, append(), remove(), sort(), and len().",
-            "code_example": "fruits = ['apple', 'banana', 'cherry']\nprint(fruits[0])\nfruits.append('mango')\nfruits.sort()\nprint(fruits)",
-            "exercises": [
-                {
-                    "id": "py-ex-08-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Create a list of 5 languages and print the third one.",
-                    "starter_code": "",
-                    "solution": "langs = ['Python', 'JS', 'C', 'Java', 'Go']\nprint(langs[2])",
-                    "hints": [
-                        "Third element is at index 2"
-                    ]
-                },
-                {
-                    "id": "py-ex-08-02",
-                    "order": 2,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Append 'Rust' to ['Python', 'Go'] and print.",
-                    "starter_code": "langs = ['Python', 'Go']\n",
-                    "solution": "langs = ['Python', 'Go']\nlangs.append('Rust')\nprint(langs)",
-                    "hints": [
-                        "Use .append()"
-                    ]
-                },
-                {
-                    "id": "py-ex-08-03",
-                    "order": 3,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Loop through numbers and print only those greater than 10.",
-                    "starter_code": "numbers = [3, 15, 7, 22, 9, 18]\n",
-                    "solution": "numbers = [3, 15, 7, 22, 9, 18]\nfor n in numbers:\n    if n > 10:\n        print(n)",
-                    "hints": [
-                        "Combine for with if"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-09",
-            "order": 9,
-            "title": "Dictionaries",
-            "content": "Dictionaries store key-value pairs. Access with keys, iterate with .items(), safe access with .get().",
-            "code_example": "student = {'name': 'Aya', 'age': 20}\nprint(student['name'])\nstudent['city'] = 'Casablanca'\nfor k, v in student.items():\n    print(k, v)",
-            "exercises": [
-                {
-                    "id": "py-ex-09-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Create a book dict with title, author, year. Print the author.",
-                    "starter_code": "",
-                    "solution": "book = {'title': 'Clean Code', 'author': 'Robert Martin', 'year': 2008}\nprint(book['author'])",
-                    "hints": [
-                        "Use {} with string keys"
-                    ]
-                },
-                {
-                    "id": "py-ex-09-02",
-                    "order": 2,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Loop through a dict and print 'key : value' for each pair.",
-                    "starter_code": "person = {'name': 'Ali', 'age': 25, 'city': 'Rabat'}\n",
-                    "solution": "person = {'name': 'Ali', 'age': 25, 'city': 'Rabat'}\nfor k, v in person.items():\n    print(k, ':', v)",
-                    "hints": [
-                        "Use .items()"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-10",
-            "order": 10,
-            "title": "Functions",
-            "content": "Functions are reusable blocks. Use def, parameters, return, and default values.",
-            "code_example": "def greet(name, msg='Hello'):\n    return f'{msg}, {name}!'\n\nprint(greet('Aya'))\nprint(greet('Ali', 'Hi'))",
-            "exercises": [
-                {
-                    "id": "py-ex-10-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Write square(n) that returns n squared.",
-                    "starter_code": "def square(n):\n    pass\nprint(square(5))",
-                    "solution": "def square(n):\n    return n ** 2\nprint(square(5))",
-                    "hints": [
-                        "Use **"
-                    ]
-                },
-                {
-                    "id": "py-ex-10-02",
-                    "order": 2,
-                    "type": "code",
-                    "difficulty": "easy",
-                    "xp": 10,
-                    "question": "Write is_even(n) that returns True if n is even.",
-                    "starter_code": "def is_even(n):\n    pass\nprint(is_even(4))\nprint(is_even(7))",
-                    "solution": "def is_even(n):\n    return n % 2 == 0\nprint(is_even(4))\nprint(is_even(7))",
-                    "hints": [
-                        "n % 2 == 0"
-                    ]
-                },
-                {
-                    "id": "py-ex-10-03",
-                    "order": 3,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "What keyword defines a function in Python?",
-                    "options": [
-                        "func",
-                        "function",
-                        "def",
-                        "fn"
-                    ],
-                    "answer": "def",
-                    "hints": [
-                        "Short for define"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-11",
-            "order": 11,
-            "title": "File Handling",
-            "content": "Use open() with modes 'r', 'w', 'a'. Always use the with statement to auto-close files.",
-            "code_example": "with open('notes.txt', 'w') as f:\n    f.write('Hello!\\n')\n\nwith open('notes.txt', 'r') as f:\n    print(f.read())",
-            "exercises": [
-                {
-                    "id": "py-ex-11-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Write 'Python is great' to a file called output.txt.",
-                    "starter_code": "# open and write\n",
-                    "solution": "with open('output.txt', 'w') as f:\n    f.write('Python is great')",
-                    "hints": [
-                        "Use 'w' mode"
-                    ]
-                },
-                {
-                    "id": "py-ex-11-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Which mode appends without overwriting?",
-                    "options": [
-                        "'r'",
-                        "'w'",
-                        "'a'",
-                        "'x'"
-                    ],
-                    "answer": "'a'",
-                    "hints": [
-                        "a = append"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-12",
-            "order": 12,
-            "title": "Classes & OOP",
-            "content": "Classes are blueprints for objects. __init__ is the constructor. self refers to the instance.",
-            "code_example": "class Dog:\n    def __init__(self, name):\n        self.name = name\n    def bark(self):\n        return f'{self.name} says Woof!'\n\nd = Dog('Rex')\nprint(d.bark())",
-            "exercises": [
-                {
-                    "id": "py-ex-12-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 15,
-                    "question": "Create a Car class with brand and year. Print both.",
-                    "starter_code": "class Car:\n    pass\n",
-                    "solution": "class Car:\n    def __init__(self, brand, year):\n        self.brand = brand\n        self.year = year\nc = Car('Toyota', 2022)\nprint(c.brand, c.year)",
-                    "hints": [
-                        "Use __init__",
-                        "self.attribute = value"
-                    ]
-                },
-                {
-                    "id": "py-ex-12-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "What is the first parameter of any class method?",
-                    "options": [
-                        "this",
-                        "cls",
-                        "self",
-                        "me"
-                    ],
-                    "answer": "self",
-                    "hints": [
-                        "Refers to the current instance"
-                    ]
-                },
-                {
-                    "id": "py-ex-12-03",
-                    "order": 3,
-                    "type": "code",
-                    "difficulty": "hard",
-                    "xp": 20,
-                    "question": "Add a describe() method to Car returning 'Brand: X, Year: Y'.",
-                    "starter_code": "class Car:\n    def __init__(self, brand, year):\n        self.brand = brand\n        self.year = year\n",
-                    "solution": "class Car:\n    def __init__(self, brand, year):\n        self.brand = brand\n        self.year = year\n    def describe(self):\n        return f'Brand: {self.brand}, Year: {self.year}'\nc = Car('Toyota', 2022)\nprint(c.describe())",
-                    "hints": [
-                        "Define a method inside the class"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "py-les-13",
-            "order": 13,
-            "title": "Error Handling",
-            "content": "try/except catches errors and prevents crashes. finally always runs. Raise custom errors with raise.",
-            "code_example": "try:\n    x = int(input('Number: '))\n    print(10 / x)\nexcept ValueError:\n    print('Not a number!')\nexcept ZeroDivisionError:\n    print('Cannot divide by zero!')\nfinally:\n    print('Done.')",
-            "exercises": [
-                {
-                    "id": "py-ex-13-01",
-                    "order": 1,
-                    "type": "code",
-                    "difficulty": "medium",
-                    "xp": 15,
-                    "question": "Wrap int('abc') in try/except and print 'Invalid input' on error.",
-                    "starter_code": "# try to convert\n",
-                    "solution": "try:\n    x = int('abc')\nexcept ValueError:\n    print('Invalid input')",
-                    "hints": [
-                        "int() raises ValueError on bad input"
-                    ]
-                },
-                {
-                    "id": "py-ex-13-02",
-                    "order": 2,
-                    "type": "mcq",
-                    "difficulty": "easy",
-                    "xp": 5,
-                    "question": "Which block always runs regardless of error?",
-                    "options": [
-                        "except",
-                        "else",
-                        "finally",
-                        "clean"
-                    ],
-                    "answer": "finally",
-                    "hints": [
-                        "Used for cleanup code"
-                    ]
-                },
-                {
-                    "id": "py-ex-13-03",
-                    "order": 3,
-                    "type": "debug",
-                    "difficulty": "medium",
-                    "xp": 10,
-                    "question": "Fix: should catch division by zero.",
-                    "broken_code": "try:\n    print(10 / 0)\nexcept ValueError:\n    print('Error')",
-                    "solution": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print('Error')",
-                    "hints": [
-                        "10/0 raises ZeroDivisionError not ValueError"
-                    ]
-                }
-            ]
+          "id": "py-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which function displays output in Python?",
+          "options": ["display()", "print()", "output()", "show()"],
+          "answer": "print()",
+          "hints": ["It is a built-in Python function"]
         }
-    ]
+      ]
+    },
+    {
+      "id": "py-les-02",
+      "order": 2,
+      "title": "Variables & Data Types",
+      "content": "Variables store data values. Python has several built-in data types: int (integers), float (decimals), str (text), and bool (True/False). You don't need to declare the type — Python detects it automatically.",
+      "code_example": "name = 'Alice'\nage = 25\nheight = 1.75\nis_student = True\n\nprint(type(name))    # <class 'str'>\nprint(type(age))     # <class 'int'>",
+      "xp": 15,
+      "lessons_required": ["py-les-01"],
+      "exercises": [
+        {
+          "id": "py-ex-02-01",
+          "order": 1,
+          "type": "code",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Create a variable called 'city' with the value 'Agadir' and print it.",
+          "starter_code": "# Create variable and print\n",
+          "solution": "city = 'Agadir'\nprint(city)",
+          "hints": ["Use = to assign a value to a variable", "Then use print() to display it"]
+        },
+        {
+          "id": "py-ex-02-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What data type is the value True in Python?",
+          "options": ["str", "int", "bool", "float"],
+          "answer": "bool",
+          "hints": ["It represents a logical true/false value"]
+        }
+      ]
+    },
+    {
+      "id": "py-les-03",
+      "order": 3,
+      "title": "Conditions & If Statements",
+      "content": "Conditions allow your program to make decisions. Use if, elif, and else to control the flow. Comparison operators: == (equal), != (not equal), > (greater than), < (less than).",
+      "code_example": "score = 75\n\nif score >= 90:\n    print('Excellent!')\nelif score >= 60:\n    print('Good job!')\nelse:\n    print('Keep practicing!')",
+      "xp": 20,
+      "lessons_required": ["py-les-02"],
+      "exercises": [
+        {
+          "id": "py-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What keyword is used for an alternative condition in Python?",
+          "options": ["else if", "elif", "elseif", "otherwise"],
+          "answer": "elif",
+          "hints": ["It is a shorthand for 'else if'"]
+        }
+      ]
+    }
+  ]
 }

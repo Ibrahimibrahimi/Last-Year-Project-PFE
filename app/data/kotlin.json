@@ -1,0 +1,117 @@
+{
+  "id": "kotlin",
+  "name": "Kotlin",
+  "icon": "langs/kotlin.svg",
+  "description": "A modern, concise JVM language — the preferred language for Android development and a joy to write.",
+  "lessons": [
+    {
+      "id": "kt-les-01",
+      "order": 1,
+      "title": "Hello World & Basics",
+      "content": "Kotlin is concise and expressive. The main function is the entry point. println() prints output. Kotlin infers types, so you rarely need to write them explicitly. Semicolons are optional.",
+      "code_example": "fun main() {\n    println(\"Hello, World!\")\n    println(42)\n    val name = \"Alice\"\n    println(\"Hello, $name!\")\n}",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "kt-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "How are functions declared in Kotlin?",
+          "options": ["function", "func", "fun", "def"],
+          "answer": "fun",
+          "hints": ["fun main() { } — Kotlin uses 'fun'"]
+        }
+      ]
+    },
+    {
+      "id": "kt-les-02",
+      "order": 2,
+      "title": "val vs var & Null Safety",
+      "content": "Kotlin uses 'val' for immutable (read-only) variables and 'var' for mutable. Kotlin is null-safe by default — types cannot be null unless explicitly marked with ?. The ?: operator provides a default for nulls.",
+      "code_example": "val name: String = \"Alice\"   // immutable\nvar age: Int = 25             // mutable\nage = 26                      // OK\n\nvar city: String? = null      // nullable\nval display = city ?: \"Unknown\"\nprintln(display) // Unknown",
+      "xp": 20,
+      "lessons_required": ["kt-les-01"],
+      "exercises": [
+        {
+          "id": "kt-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which Kotlin keyword declares an immutable variable?",
+          "options": ["var", "val", "let", "const"],
+          "answer": "val",
+          "hints": ["val = value (immutable); var = variable (mutable)"]
+        },
+        {
+          "id": "kt-ex-02-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does String? mean in Kotlin?",
+          "options": ["A String that is optional", "A nullable String", "A String with unknown length", "A string template"],
+          "answer": "A nullable String",
+          "hints": ["The ? marks a type as able to hold null"]
+        }
+      ]
+    },
+    {
+      "id": "kt-les-03",
+      "order": 3,
+      "title": "Data Classes",
+      "content": "Data classes in Kotlin automatically generate equals(), hashCode(), toString(), and copy(). They are perfect for holding data. Declare them with the 'data class' keyword.",
+      "code_example": "data class User(\n    val id: Int,\n    val name: String,\n    val email: String\n)\n\nval user1 = User(1, \"Alice\", \"alice@email.com\")\nval user2 = user1.copy(name = \"Bob\")\n\nprintln(user1) // User(id=1, name=Alice, ...)\nprintln(user2) // User(id=1, name=Bob, ...)",
+      "xp": 20,
+      "lessons_required": ["kt-les-02"],
+      "exercises": [
+        {
+          "id": "kt-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does data class automatically generate?",
+          "options": [
+            "Only toString()",
+            "Only equals() and hashCode()",
+            "equals(), hashCode(), toString(), and copy()",
+            "Nothing — you still write everything manually"
+          ],
+          "answer": "equals(), hashCode(), toString(), and copy()",
+          "hints": ["Data classes are a convenience feature that generates boilerplate"]
+        }
+      ]
+    },
+    {
+      "id": "kt-les-04",
+      "order": 4,
+      "title": "Extension Functions & Lambdas",
+      "content": "Extension functions add methods to existing classes without modifying them. Lambdas are anonymous functions. Together they make Kotlin code highly expressive and concise.",
+      "code_example": "// Extension function on String\nfun String.isPalindrome(): Boolean {\n    return this == this.reversed()\n}\n\nprintln(\"racecar\".isPalindrome()) // true\nprintln(\"hello\".isPalindrome())   // false\n\n// Lambda\nval square = { x: Int -> x * x }\nprintln(square(5)) // 25",
+      "xp": 25,
+      "lessons_required": ["kt-les-03"],
+      "exercises": [
+        {
+          "id": "kt-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What do extension functions allow you to do?",
+          "options": [
+            "Override existing class methods",
+            "Add new methods to classes without modifying them",
+            "Access private fields",
+            "Create new classes"
+          ],
+          "answer": "Add new methods to classes without modifying them",
+          "hints": ["fun String.myMethod() — extends String without changing its source"]
+        }
+      ]
+    }
+  ]
+}

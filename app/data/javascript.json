@@ -1,0 +1,162 @@
+{
+  "id": "javascript",
+  "name": "JavaScript",
+  "icon": "langs/javascript.svg",
+  "description": "The language of the web. Build interactive websites, front-end apps, and back-end services with Node.js.",
+  "lessons": [
+    {
+      "id": "js-les-01",
+      "order": 1,
+      "title": "Hello World & console.log",
+      "content": "JavaScript runs in the browser and in Node.js. The console.log() function prints output to the console. It is the most basic debugging and output tool in JavaScript.",
+      "code_example": "console.log('Hello, World!');\nconsole.log(42);\nconsole.log(true);\nconsole.log('Sum:', 3 + 4);",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "js-ex-01-01",
+          "order": 1,
+          "type": "code",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Print the message 'I am learning JavaScript' to the console.",
+          "starter_code": "// Write your code here\n",
+          "solution": "console.log('I am learning JavaScript')",
+          "hints": ["Use console.log() with the text in quotes"]
+        },
+        {
+          "id": "js-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which function is used to print output in JavaScript?",
+          "options": ["print()", "console.log()", "output()", "display()"],
+          "answer": "console.log()",
+          "hints": ["It is part of the console object"]
+        }
+      ]
+    },
+    {
+      "id": "js-les-02",
+      "order": 2,
+      "title": "Variables: var, let, const",
+      "content": "JavaScript has three ways to declare variables. 'var' is function-scoped (old style). 'let' is block-scoped and can be reassigned. 'const' is block-scoped and cannot be reassigned. Prefer const by default, use let when you need to reassign.",
+      "code_example": "const name = 'Alice';\nlet age = 25;\nage = 26;\n\nconst PI = 3.14159;\nconsole.log(name, age, PI);",
+      "xp": 15,
+      "lessons_required": ["js-les-01"],
+      "exercises": [
+        {
+          "id": "js-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which keyword declares a variable that cannot be reassigned?",
+          "options": ["var", "let", "const", "static"],
+          "answer": "const",
+          "hints": ["Think 'constant' — it never changes"]
+        },
+        {
+          "id": "js-ex-02-02",
+          "order": 2,
+          "type": "code",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Declare a const called 'country' with value 'Morocco' and log it.",
+          "starter_code": "// Declare and log\n",
+          "solution": "const country = 'Morocco';\nconsole.log(country);",
+          "hints": ["Use const keyword, then console.log()"]
+        }
+      ]
+    },
+    {
+      "id": "js-les-03",
+      "order": 3,
+      "title": "Functions & Arrow Functions",
+      "content": "Functions are reusable blocks of code. Declare them with the 'function' keyword or as arrow functions (=>). Arrow functions are shorter and commonly used in modern JavaScript.",
+      "code_example": "function greet(name) {\n  return 'Hello, ' + name + '!';\n}\n\nconst add = (a, b) => a + b;\n\nconsole.log(greet('Bob'));  // Hello, Bob!\nconsole.log(add(3, 4));     // 7",
+      "xp": 20,
+      "lessons_required": ["js-les-02"],
+      "exercises": [
+        {
+          "id": "js-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What is the correct arrow function syntax to multiply two numbers?",
+          "options": ["function mul(a,b) => a*b", "const mul = (a,b) => a*b;", "const mul = a,b -> a*b;", "def mul(a,b): return a*b"],
+          "answer": "const mul = (a,b) => a*b;",
+          "hints": ["Arrow functions use => after the parameters"]
+        }
+      ]
+    },
+    {
+      "id": "js-les-04",
+      "order": 4,
+      "title": "Arrays & Array Methods",
+      "content": "Arrays store ordered lists of values. Key methods: push() adds an item, pop() removes the last, map() transforms each element, filter() selects elements matching a condition, reduce() accumulates a value.",
+      "code_example": "const nums = [1, 2, 3, 4, 5];\nconst doubled = nums.map(n => n * 2);\nconst evens   = nums.filter(n => n % 2 === 0);\nconst sum     = nums.reduce((acc, n) => acc + n, 0);\n\nconsole.log(doubled); // [2,4,6,8,10]\nconsole.log(evens);   // [2,4]\nconsole.log(sum);     // 15",
+      "xp": 25,
+      "lessons_required": ["js-les-03"],
+      "exercises": [
+        {
+          "id": "js-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which array method creates a new array by transforming each element?",
+          "options": ["filter()", "forEach()", "map()", "find()"],
+          "answer": "map()",
+          "hints": ["It maps each element to a new value"]
+        }
+      ]
+    },
+    {
+      "id": "js-les-05",
+      "order": 5,
+      "title": "Objects & Destructuring",
+      "content": "Objects store key-value pairs. Destructuring lets you unpack properties into variables in a concise way. The spread operator (...) copies object properties.",
+      "code_example": "const person = { name: 'Alice', age: 28, city: 'Casablanca' };\n\n// Dot notation\nconsole.log(person.name); // Alice\n\n// Destructuring\nconst { name, age } = person;\nconsole.log(name, age); // Alice 28\n\n// Spread\nconst updated = { ...person, age: 29 };\nconsole.log(updated.age); // 29",
+      "xp": 25,
+      "lessons_required": ["js-les-04"],
+      "exercises": [
+        {
+          "id": "js-ex-05-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does const { name } = person; do?",
+          "options": ["Creates a new object", "Deletes name from person", "Extracts the name property into a variable", "Renames the object"],
+          "answer": "Extracts the name property into a variable",
+          "hints": ["This is called destructuring assignment"]
+        }
+      ]
+    },
+    {
+      "id": "js-les-06",
+      "order": 6,
+      "title": "Promises & Async/Await",
+      "content": "Asynchronous code doesn't block execution. Promises represent future values. async/await is syntactic sugar over Promises that makes async code look synchronous and is much easier to read.",
+      "code_example": "// Promise\nfunction fetchData() {\n  return new Promise((resolve) => {\n    setTimeout(() => resolve('Data loaded!'), 1000);\n  });\n}\n\n// async/await\nasync function main() {\n  const result = await fetchData();\n  console.log(result); // Data loaded!\n}\n\nmain();",
+      "xp": 30,
+      "lessons_required": ["js-les-05"],
+      "exercises": [
+        {
+          "id": "js-ex-06-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "hard",
+          "xp": 15,
+          "question": "What keyword pauses async function execution until a Promise resolves?",
+          "options": ["wait", "pause", "await", "hold"],
+          "answer": "await",
+          "hints": ["It can only be used inside an async function"]
+        }
+      ]
+    }
+  ]
+}

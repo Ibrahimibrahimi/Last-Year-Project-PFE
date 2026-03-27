@@ -1,0 +1,112 @@
+{
+  "id": "typescript",
+  "name": "TypeScript",
+  "icon": "langs/typescript.svg",
+  "description": "JavaScript with static types. Catch errors at compile time and write more maintainable large-scale applications.",
+  "lessons": [
+    {
+      "id": "ts-les-01",
+      "order": 1,
+      "title": "Types & Type Annotations",
+      "content": "TypeScript adds static typing to JavaScript. You annotate variables and function parameters with types using a colon. If you assign the wrong type, the compiler errors before your code runs.",
+      "code_example": "let name: string = 'Alice';\nlet age: number = 25;\nlet active: boolean = true;\n\nfunction greet(name: string): string {\n  return `Hello, ${name}!`;\n}\n\nconsole.log(greet('Bob')); // Hello, Bob!",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "ts-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What is the TypeScript type annotation for text values?",
+          "options": ["text", "str", "string", "String"],
+          "answer": "string",
+          "hints": ["It is lowercase in TypeScript"]
+        },
+        {
+          "id": "ts-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Where do you place a type annotation for a variable?",
+          "options": ["Before the variable name", "After the variable name with :", "Inside the value", "At the end of the file"],
+          "answer": "After the variable name with :",
+          "hints": ["let age: number = 25"]
+        }
+      ]
+    },
+    {
+      "id": "ts-les-02",
+      "order": 2,
+      "title": "Interfaces & Type Aliases",
+      "content": "Interfaces define the shape of objects — what properties and types they must have. Type aliases create reusable type names. Both help document and enforce data structures across your codebase.",
+      "code_example": "interface User {\n  id: number;\n  name: string;\n  email: string;\n  role?: string; // optional\n}\n\ntype Status = 'active' | 'inactive' | 'banned';\n\nconst user: User = { id: 1, name: 'Alice', email: 'a@b.com' };\nconst status: Status = 'active';",
+      "xp": 20,
+      "lessons_required": ["ts-les-01"],
+      "exercises": [
+        {
+          "id": "ts-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does a ? after a property name mean in an interface?",
+          "options": ["The property is required", "The property is optional", "The property is read-only", "The property is private"],
+          "answer": "The property is optional",
+          "hints": ["role?: string — the ? makes it optional"]
+        }
+      ]
+    },
+    {
+      "id": "ts-les-03",
+      "order": 3,
+      "title": "Generics",
+      "content": "Generics let you write reusable functions and classes that work with any type while preserving type safety. The type parameter T is a placeholder replaced when the function is called.",
+      "code_example": "function identity<T>(value: T): T {\n  return value;\n}\n\nconsole.log(identity<string>('hello')); // hello\nconsole.log(identity<number>(42));       // 42\n\nfunction first<T>(arr: T[]): T {\n  return arr[0];\n}\nconsole.log(first([1, 2, 3])); // 1",
+      "xp": 30,
+      "lessons_required": ["ts-les-02"],
+      "exercises": [
+        {
+          "id": "ts-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "hard",
+          "xp": 15,
+          "question": "What is the purpose of generics in TypeScript?",
+          "options": [
+            "To make code run faster",
+            "To write reusable code that works with any type safely",
+            "To remove type checking",
+            "To create global variables"
+          ],
+          "answer": "To write reusable code that works with any type safely",
+          "hints": ["Think of T as a type variable — it gets filled in later"]
+        }
+      ]
+    },
+    {
+      "id": "ts-les-04",
+      "order": 4,
+      "title": "Enums",
+      "content": "Enums define a set of named constants. Numeric enums auto-increment from 0. String enums give each member an explicit string value. Enums make intent clearer than raw numbers or strings.",
+      "code_example": "enum Direction {\n  Up,\n  Down,\n  Left,\n  Right\n}\n\nenum Color {\n  Red = 'RED',\n  Green = 'GREEN',\n  Blue = 'BLUE'\n}\n\nconst move = Direction.Up;\nconst c = Color.Green;\nconsole.log(move); // 0\nconsole.log(c);    // GREEN",
+      "xp": 20,
+      "lessons_required": ["ts-les-03"],
+      "exercises": [
+        {
+          "id": "ts-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What value does the first member of a numeric enum get by default?",
+          "options": ["1", "0", "-1", "undefined"],
+          "answer": "0",
+          "hints": ["Enums start counting from 0 unless you specify otherwise"]
+        }
+      ]
+    }
+  ]
+}

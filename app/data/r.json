@@ -1,0 +1,112 @@
+{
+  "id": "r",
+  "name": "R",
+  "icon": "langs/r.svg",
+  "description": "The statistician's language. Powerful for data analysis, statistical modeling, and data visualization.",
+  "lessons": [
+    {
+      "id": "r-les-01",
+      "order": 1,
+      "title": "Basics & print()",
+      "content": "R is designed for statistical computing. Use print() or cat() for output. Variables are assigned with <- (preferred) or =. R is vectorized — operations apply to entire vectors at once.",
+      "code_example": "# Print output\nprint(\"Hello, World!\")\ncat(\"Hello from R\\n\")\n\n# Variables\nname <- \"Alice\"\nage  <- 25\nprint(paste(\"Name:\", name, \"Age:\", age))\n\n# Vectorized math\nx <- c(1, 2, 3, 4, 5)\nprint(x * 2)  # 2 4 6 8 10",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "r-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What is the preferred assignment operator in R?",
+          "options": ["=", "->", "<-", ":="],
+          "answer": "<-",
+          "hints": ["name <- 'Alice' — the arrow points to the variable"]
+        },
+        {
+          "id": "r-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What does c(1, 2, 3) create in R?",
+          "options": ["A list", "A matrix", "A vector", "A dataframe"],
+          "answer": "A vector",
+          "hints": ["c() stands for 'combine' — it creates a vector"]
+        }
+      ]
+    },
+    {
+      "id": "r-les-02",
+      "order": 2,
+      "title": "Vectors & Data Frames",
+      "content": "Vectors are the building block of R. Data frames are the most important data structure — like a table with columns of different types. Access columns with $ notation.",
+      "code_example": "# Vector operations\nscores <- c(85, 92, 78, 95, 88)\ncat(\"Mean:\", mean(scores), \"\\n\")\ncat(\"Max:\",  max(scores),  \"\\n\")\n\n# Data frame\ndf <- data.frame(\n  name  = c(\"Alice\", \"Bob\", \"Charlie\"),\n  score = c(95, 87, 92)\n)\nprint(df)\nprint(df$name)  # access column",
+      "xp": 20,
+      "lessons_required": ["r-les-01"],
+      "exercises": [
+        {
+          "id": "r-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "How do you access a column named 'score' in a data frame 'df'?",
+          "options": ["df[score]", "df->score", "df.score", "df$score"],
+          "answer": "df$score",
+          "hints": ["The $ operator accesses named elements in R"]
+        }
+      ]
+    },
+    {
+      "id": "r-les-03",
+      "order": 3,
+      "title": "Functions & Apply Family",
+      "content": "Define reusable functions with the 'function' keyword. The apply family (lapply, sapply, tapply) applies functions over lists or vectors without explicit loops — more idiomatic than for loops in R.",
+      "code_example": "# Custom function\nsquare <- function(x) x^2\nprint(square(5))  # 25\n\n# sapply: returns simplified result\nnums <- 1:5\nprint(sapply(nums, square))  # 1 4 9 16 25\n\n# Function with multiple args\npower <- function(base, exp = 2) base^exp\nprint(power(3))    # 9\nprint(power(2, 3)) # 8",
+      "xp": 20,
+      "lessons_required": ["r-les-02"],
+      "exercises": [
+        {
+          "id": "r-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What does sapply(1:5, square) do?",
+          "options": [
+            "Applies square to a random sample of 5",
+            "Applies the square function to each element of 1:5 and simplifies the result",
+            "Creates 5 squares",
+            "Samples from the square distribution"
+          ],
+          "answer": "Applies the square function to each element of 1:5 and simplifies the result",
+          "hints": ["sapply = simplified apply — applies a function element-wise"]
+        }
+      ]
+    },
+    {
+      "id": "r-les-04",
+      "order": 4,
+      "title": "ggplot2 — Data Visualization",
+      "content": "ggplot2 is R's most popular plotting library, based on the Grammar of Graphics. Build plots in layers: data + aesthetics (aes) + geometry (geom_*). It produces beautiful, publication-ready charts.",
+      "code_example": "library(ggplot2)\n\ndf <- data.frame(\n  x = 1:10,\n  y = c(2,4,5,7,6,8,9,10,8,11)\n)\n\nggplot(df, aes(x = x, y = y)) +\n  geom_point(color = 'steelblue', size = 3) +\n  geom_line(color = 'steelblue') +\n  labs(title = 'My First ggplot',\n       x = 'X Axis', y = 'Y Axis') +\n  theme_minimal()",
+      "xp": 25,
+      "lessons_required": ["r-les-03"],
+      "exercises": [
+        {
+          "id": "r-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "In ggplot2, what does aes() specify?",
+          "options": ["Aesthetic settings like font size", "Mapping of data columns to visual properties like x, y, color", "The type of geometry to draw", "The plot title"],
+          "answer": "Mapping of data columns to visual properties like x, y, color",
+          "hints": ["aes = aesthetics: aes(x = col1, y = col2, color = col3)"]
+        }
+      ]
+    }
+  ]
+}

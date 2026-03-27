@@ -1,0 +1,140 @@
+{
+  "id": "java",
+  "name": "Java",
+  "icon": "langs/java.svg",
+  "description": "A robust, object-oriented language used in enterprise software, Android development, and large-scale systems.",
+  "lessons": [
+    {
+      "id": "java-les-01",
+      "order": 1,
+      "title": "Hello World & Main Method",
+      "content": "Every Java program starts with a class containing a main method. The System.out.println() method prints output followed by a newline. Java is statically typed — every variable must have a declared type.",
+      "code_example": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n        System.out.println(42);\n        System.out.println(3.14);\n    }\n}",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "java-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What is the entry point of every Java program?",
+          "options": ["start()", "run()", "main()", "init()"],
+          "answer": "main()",
+          "hints": ["Its full signature is: public static void main(String[] args)"]
+        },
+        {
+          "id": "java-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which method prints output to the console in Java?",
+          "options": ["console.log()", "print()", "System.out.println()", "echo()"],
+          "answer": "System.out.println()",
+          "hints": ["It belongs to the System.out stream"]
+        }
+      ]
+    },
+    {
+      "id": "java-les-02",
+      "order": 2,
+      "title": "Data Types & Variables",
+      "content": "Java is strongly typed. Primitive types: int, double, boolean, char. Reference types include String and all objects. Variables must be declared with their type before use.",
+      "code_example": "int age = 25;\ndouble price = 19.99;\nboolean isActive = true;\nchar grade = 'A';\nString name = \"Alice\";\n\nSystem.out.println(name + \" is \" + age + \" years old.\");",
+      "xp": 15,
+      "lessons_required": ["java-les-01"],
+      "exercises": [
+        {
+          "id": "java-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which Java type stores a whole number?",
+          "options": ["double", "float", "int", "char"],
+          "answer": "int",
+          "hints": ["Short for integer — no decimal point"]
+        },
+        {
+          "id": "java-ex-02-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "How is a String literal written in Java?",
+          "options": ["'Hello'", "\"Hello\"", "`Hello`", "#Hello"],
+          "answer": "\"Hello\"",
+          "hints": ["Java uses double quotes for String literals"]
+        }
+      ]
+    },
+    {
+      "id": "java-les-03",
+      "order": 3,
+      "title": "Classes & Objects",
+      "content": "Java is object-oriented. A class is a blueprint; an object is an instance. Classes have fields (data) and methods (behaviour). The 'new' keyword creates an object.",
+      "code_example": "public class Car {\n    String brand;\n    int year;\n\n    public Car(String brand, int year) {\n        this.brand = brand;\n        this.year = year;\n    }\n\n    public String describe() {\n        return brand + \" (\" + year + \")\";\n    }\n}\n\n// Usage\nCar car = new Car(\"Toyota\", 2022);\nSystem.out.println(car.describe()); // Toyota (2022)",
+      "xp": 25,
+      "lessons_required": ["java-les-02"],
+      "exercises": [
+        {
+          "id": "java-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What keyword creates a new object from a class?",
+          "options": ["create", "new", "make", "instance"],
+          "answer": "new",
+          "hints": ["Car car = ___ Car('Toyota', 2022);"]
+        }
+      ]
+    },
+    {
+      "id": "java-les-04",
+      "order": 4,
+      "title": "Inheritance & Polymorphism",
+      "content": "Inheritance lets a class extend another class, reusing its fields and methods. The 'extends' keyword sets the parent class. Polymorphism lets a child class override parent methods with @Override.",
+      "code_example": "public class Animal {\n    public String speak() {\n        return \"...\";\n    }\n}\n\npublic class Dog extends Animal {\n    @Override\n    public String speak() {\n        return \"Woof!\";\n    }\n}\n\nAnimal a = new Dog();\nSystem.out.println(a.speak()); // Woof!",
+      "xp": 30,
+      "lessons_required": ["java-les-03"],
+      "exercises": [
+        {
+          "id": "java-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which keyword is used to inherit from a class in Java?",
+          "options": ["implements", "inherits", "extends", "super"],
+          "answer": "extends",
+          "hints": ["class Dog ___ Animal { }"]
+        }
+      ]
+    },
+    {
+      "id": "java-les-05",
+      "order": 5,
+      "title": "Collections: List & Map",
+      "content": "Java Collections Framework provides List (ordered, allows duplicates) and Map (key-value pairs). ArrayList and HashMap are the most common implementations.",
+      "code_example": "import java.util.*;\n\nList<String> names = new ArrayList<>();\nnames.add(\"Alice\");\nnames.add(\"Bob\");\nSystem.out.println(names.get(0)); // Alice\n\nMap<String, Integer> scores = new HashMap<>();\nscores.put(\"Alice\", 95);\nscores.put(\"Bob\", 87);\nSystem.out.println(scores.get(\"Alice\")); // 95",
+      "xp": 30,
+      "lessons_required": ["java-les-04"],
+      "exercises": [
+        {
+          "id": "java-ex-05-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "hard",
+          "xp": 15,
+          "question": "Which collection stores key-value pairs in Java?",
+          "options": ["ArrayList", "LinkedList", "HashMap", "HashSet"],
+          "answer": "HashMap",
+          "hints": ["It maps keys to values, like a dictionary"]
+        }
+      ]
+    }
+  ]
+}

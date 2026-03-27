@@ -1,0 +1,112 @@
+{
+  "id": "swift",
+  "name": "Swift",
+  "icon": "langs/swift.svg",
+  "description": "Apple's modern language for iOS, macOS, and beyond. Safe, fast, and expressive with a clean syntax.",
+  "lessons": [
+    {
+      "id": "sw-les-01",
+      "order": 1,
+      "title": "Hello World & print()",
+      "content": "Swift is Apple's language for iOS and macOS apps. The print() function outputs to the console. Swift is type-safe and uses type inference — you rarely need to write types explicitly.",
+      "code_example": "print(\"Hello, World!\")\nprint(42)\n\nlet name = \"Alice\"\nprint(\"Hello, \\(name)!\")  // string interpolation\nprint(3 + 4)               // 7",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "sw-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What syntax is used for string interpolation in Swift?",
+          "options": ["#{name}", "${name}", "\\(name)", "%(name)"],
+          "answer": "\\(name)",
+          "hints": ["\"Hello, \\(name)!\" — backslash + parentheses"]
+        }
+      ]
+    },
+    {
+      "id": "sw-les-02",
+      "order": 2,
+      "title": "let, var & Optionals",
+      "content": "Swift uses 'let' for constants and 'var' for variables. Optionals (Type?) represent a value that may be absent. Use if-let or guard-let to safely unwrap optionals.",
+      "code_example": "let pi = 3.14159          // constant\nvar score = 0             // variable\nscore += 10\n\nvar city: String? = nil   // optional\ncity = \"Casablanca\"\n\nif let c = city {\n    print(\"City: \\(c)\")   // City: Casablanca\n}",
+      "xp": 20,
+      "lessons_required": ["sw-les-01"],
+      "exercises": [
+        {
+          "id": "sw-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What does String? mean in Swift?",
+          "options": ["A required String", "An optional String that may be nil", "A dynamic String", "A constant String"],
+          "answer": "An optional String that may be nil",
+          "hints": ["The ? marks it as optional — it can hold nil"]
+        },
+        {
+          "id": "sw-ex-02-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which pattern safely unwraps an optional in Swift?",
+          "options": ["force unwrap (!)", "if let binding", "as? casting", "try/catch"],
+          "answer": "if let binding",
+          "hints": ["if let value = optional { } — safe unwrapping"]
+        }
+      ]
+    },
+    {
+      "id": "sw-les-03",
+      "order": 3,
+      "title": "Structs & Classes",
+      "content": "Swift has both structs (value types) and classes (reference types). Structs are copied when assigned; classes share a reference. In Swift, prefer structs for simple data models.",
+      "code_example": "struct Point {\n    var x: Double\n    var y: Double\n    func distance() -> Double {\n        return (x*x + y*y).squareRoot()\n    }\n}\n\nclass Vehicle {\n    var speed: Int = 0\n    func accelerate() { speed += 10 }\n}\n\nvar p = Point(x: 3, y: 4)\nprint(p.distance()) // 5.0",
+      "xp": 25,
+      "lessons_required": ["sw-les-02"],
+      "exercises": [
+        {
+          "id": "sw-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What is the key difference between structs and classes in Swift?",
+          "options": [
+            "Structs support inheritance, classes do not",
+            "Structs are value types (copied); classes are reference types (shared)",
+            "Classes are faster than structs",
+            "There is no difference"
+          ],
+          "answer": "Structs are value types (copied); classes are reference types (shared)",
+          "hints": ["Copy vs reference — structs are independent copies"]
+        }
+      ]
+    },
+    {
+      "id": "sw-les-04",
+      "order": 4,
+      "title": "Closures",
+      "content": "Closures are self-contained blocks of code that can be passed and used. They are Swift's equivalent of lambdas. Trailing closure syntax makes them very clean. Used heavily in SwiftUI and async code.",
+      "code_example": "let numbers = [3, 1, 4, 1, 5, 9]\n\n// Closure as argument\nlet sorted = numbers.sorted { $0 < $1 }\nprint(sorted) // [1, 1, 3, 4, 5, 9]\n\nlet doubled = numbers.map { $0 * 2 }\nprint(doubled)\n\n// Named closure\nlet greet: (String) -> String = { name in\n    return \"Hello, \\(name)!\"\n}\nprint(greet(\"Bob\"))",
+      "xp": 25,
+      "lessons_required": ["sw-les-03"],
+      "exercises": [
+        {
+          "id": "sw-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What do $0 and $1 refer to inside a Swift closure?",
+          "options": ["Global variables", "Error codes", "Shorthand names for the first and second arguments", "Index values"],
+          "answer": "Shorthand names for the first and second arguments",
+          "hints": ["Swift automatically provides $0, $1... as argument shorthand"]
+        }
+      ]
+    }
+  ]
+}

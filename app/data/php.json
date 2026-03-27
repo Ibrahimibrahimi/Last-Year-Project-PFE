@@ -1,0 +1,107 @@
+{
+  "id": "php",
+  "name": "PHP",
+  "icon": "langs/php.svg",
+  "description": "The server-side scripting language powering WordPress, Laravel, and millions of websites worldwide.",
+  "lessons": [
+    {
+      "id": "php-les-01",
+      "order": 1,
+      "title": "PHP Syntax & echo",
+      "content": "PHP code is embedded in HTML between <?php and ?> tags. Variables start with a dollar sign ($). The echo statement outputs text. PHP files have the .php extension and run on a web server.",
+      "code_example": "<?php\necho \"Hello, World!\\n\";\necho 42;\necho \"\\n\";\n\n$name = \"Alice\";\necho \"Hello, $name!\\n\"; // variable interpolation\n?>",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "php-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "How do variable names start in PHP?",
+          "options": ["@", "#", "$", "&"],
+          "answer": "$",
+          "hints": ["$name, $age, $price — always a dollar sign"]
+        },
+        {
+          "id": "php-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which statement outputs text in PHP?",
+          "options": ["print_line()", "console.log()", "echo", "System.out.println()"],
+          "answer": "echo",
+          "hints": ["echo 'Hello'; — simple and fast"]
+        }
+      ]
+    },
+    {
+      "id": "php-les-02",
+      "order": 2,
+      "title": "Arrays & Associative Arrays",
+      "content": "PHP arrays can be indexed (numeric keys) or associative (string keys). Use array() or [] to create them. Access values with brackets. Useful functions: count(), array_push(), array_merge().",
+      "code_example": "<?php\n// Indexed array\n$fruits = ['apple', 'banana', 'cherry'];\necho $fruits[0]; // apple\n\n// Associative array\n$person = [\n    'name' => 'Alice',\n    'age'  => 28,\n];\necho $person['name']; // Alice\necho count($fruits);  // 3\n?>",
+      "xp": 15,
+      "lessons_required": ["php-les-01"],
+      "exercises": [
+        {
+          "id": "php-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which operator separates keys and values in a PHP associative array?",
+          "options": [":", "=>", "->", "="],
+          "answer": "=>",
+          "hints": ["'key' => 'value' — the fat arrow"]
+        }
+      ]
+    },
+    {
+      "id": "php-les-03",
+      "order": 3,
+      "title": "Functions & Scope",
+      "content": "PHP functions are declared with the 'function' keyword. Variables inside functions have local scope by default. Use 'global' to access outer variables. Functions can have default parameter values.",
+      "code_example": "<?php\nfunction greet(string $name, string $greeting = 'Hello'): string {\n    return \"$greeting, $name!\";\n}\n\necho greet('Bob');          // Hello, Bob!\necho greet('Alice', 'Hi'); // Hi, Alice!\n?>",
+      "xp": 20,
+      "lessons_required": ["php-les-02"],
+      "exercises": [
+        {
+          "id": "php-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "How do you declare a function in PHP?",
+          "options": ["def greet() {}", "func greet() {}", "function greet() {}", "fn greet() {}"],
+          "answer": "function greet() {}",
+          "hints": ["PHP uses the 'function' keyword"]
+        }
+      ]
+    },
+    {
+      "id": "php-les-04",
+      "order": 4,
+      "title": "Classes & OOP",
+      "content": "PHP supports full OOP. Classes use public/protected/private visibility. The constructor is __construct(). Inheritance uses 'extends'. Use $this to refer to the current object.",
+      "code_example": "<?php\nclass Animal {\n    public string $name;\n    public function __construct(string $name) {\n        $this->name = $name;\n    }\n    public function speak(): string {\n        return '...';\n    }\n}\n\nclass Dog extends Animal {\n    public function speak(): string {\n        return \"Woof! I'm {$this->name}.\";\n    }\n}\n\n$dog = new Dog('Rex');\necho $dog->speak();\n?>",
+      "xp": 25,
+      "lessons_required": ["php-les-03"],
+      "exercises": [
+        {
+          "id": "php-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What is the name of the constructor method in PHP?",
+          "options": ["constructor()", "__init__()", "__construct()", "init()"],
+          "answer": "__construct()",
+          "hints": ["PHP magic methods start with double underscores"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "ruby",
+  "name": "Ruby",
+  "icon": "langs/ruby.svg",
+  "description": "An elegant, developer-friendly language famous for Ruby on Rails. Optimized for programmer happiness.",
+  "lessons": [
+    {
+      "id": "rb-les-01",
+      "order": 1,
+      "title": "Hello World & puts",
+      "content": "Ruby is clean and readable — often reads like English. The 'puts' method prints output followed by a newline. 'print' outputs without a newline. String interpolation uses #{} inside double-quoted strings.",
+      "code_example": "puts \"Hello, World!\"\nputs 42\n\nname = \"Alice\"\nputs \"Hello, #{name}!\"  # interpolation\nputs 1 + 2               # 3",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "rb-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which Ruby method prints output with a newline?",
+          "options": ["print", "echo", "puts", "console.log"],
+          "answer": "puts",
+          "hints": ["puts = put string (adds newline automatically)"]
+        },
+        {
+          "id": "rb-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What syntax is used for string interpolation in Ruby?",
+          "options": ["${name}", "%(name)", "#{name}", "{name}"],
+          "answer": "#{name}",
+          "hints": ["\"Hello, #{name}!\" — hash + curly braces inside double quotes"]
+        }
+      ]
+    },
+    {
+      "id": "rb-les-02",
+      "order": 2,
+      "title": "Arrays & Hashes",
+      "content": "Ruby arrays hold ordered collections. Hashes are key-value stores (like dictionaries). Both are very flexible. Key array methods: push, pop, map, select, each. Hashes use => or symbol: syntax.",
+      "code_example": "fruits = ['apple', 'banana', 'cherry']\nfruits.push('mango')\nputs fruits.length  # 4\n\ndoubled = fruits.map { |f| f.upcase }\nputs doubled.inspect\n\nperson = { name: 'Alice', age: 28 }\nputs person[:name]  # Alice",
+      "xp": 15,
+      "lessons_required": ["rb-les-01"],
+      "exercises": [
+        {
+          "id": "rb-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What is a Ruby Hash equivalent to in other languages?",
+          "options": ["An array", "A set", "A dictionary / map", "A function"],
+          "answer": "A dictionary / map",
+          "hints": ["Key-value pairs: { name: 'Alice', age: 28 }"]
+        }
+      ]
+    },
+    {
+      "id": "rb-les-03",
+      "order": 3,
+      "title": "Classes & Methods",
+      "content": "Ruby is fully object-oriented — everything is an object. Define classes with 'class'. Use 'def' to define methods. 'initialize' is the constructor. Instance variables start with @.",
+      "code_example": "class Dog\n  def initialize(name)\n    @name = name\n  end\n\n  def speak\n    \"Woof! I'm #{@name}.\"\n  end\nend\n\ndog = Dog.new('Rex')\nputs dog.speak  # Woof! I'm Rex.",
+      "xp": 20,
+      "lessons_required": ["rb-les-02"],
+      "exercises": [
+        {
+          "id": "rb-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What prefix do instance variables use in Ruby?",
+          "options": ["$", "self.", "@", "#"],
+          "answer": "@",
+          "hints": ["@name, @age — @ denotes instance scope"]
+        }
+      ]
+    },
+    {
+      "id": "rb-les-04",
+      "order": 4,
+      "title": "Blocks, Procs & Lambdas",
+      "content": "Blocks are anonymous chunks of code passed to methods using do..end or {}. Procs and Lambdas are reusable blocks stored as objects. They are central to Ruby's expressive style.",
+      "code_example": "# Block with each\n[1, 2, 3].each do |n|\n  puts n * 2\nend\n\n# Lambda\nsquare = ->(x) { x * x }\nputs square.call(5)  # 25\n\n# Proc\ndouble = Proc.new { |x| x * 2 }\nputs double.call(4)  # 8",
+      "xp": 25,
+      "lessons_required": ["rb-les-03"],
+      "exercises": [
+        {
+          "id": "rb-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "Which syntax creates a Lambda in Ruby?",
+          "options": ["lambda {}", "proc {}", "->(x) {}", "block {}"],
+          "answer": "->(x) {}",
+          "hints": ["The stabby lambda: ->(params) { body }"]
+        }
+      ]
+    }
+  ]
+}

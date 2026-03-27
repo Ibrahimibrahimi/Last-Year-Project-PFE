@@ -1,0 +1,112 @@
+{
+  "id": "go",
+  "name": "Go",
+  "icon": "langs/go.svg",
+  "description": "A simple, fast, statically typed language from Google. Excellent for building web servers, CLIs, and microservices.",
+  "lessons": [
+    {
+      "id": "go-les-01",
+      "order": 1,
+      "title": "Hello World & Packages",
+      "content": "Every Go file belongs to a package. The 'main' package is the entry point. Import statements bring in libraries. fmt.Println prints output. Go uses := for short variable declaration.",
+      "code_example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n    fmt.Println(42)\n    fmt.Printf(\"Pi is approximately %.2f\\n\", 3.14159)\n}",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "go-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which package must a Go program's entry point belong to?",
+          "options": ["program", "start", "main", "init"],
+          "answer": "main",
+          "hints": ["package main — this tells Go where execution begins"]
+        },
+        {
+          "id": "go-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which function prints output in Go?",
+          "options": ["print()", "fmt.Println()", "console.log()", "cout"],
+          "answer": "fmt.Println()",
+          "hints": ["It belongs to the fmt (format) package"]
+        }
+      ]
+    },
+    {
+      "id": "go-les-02",
+      "order": 2,
+      "title": "Variables & Types",
+      "content": "Go has static typing. Use 'var' for explicit declaration or ':=' for short declaration (type inferred). Basic types: int, float64, string, bool. Multiple return values are a key Go feature.",
+      "code_example": "package main\nimport \"fmt\"\n\nfunc divide(a, b float64) (float64, error) {\n    if b == 0 {\n        return 0, fmt.Errorf(\"division by zero\")\n    }\n    return a / b, nil\n}\n\nfunc main() {\n    x := 10\n    name := \"Alice\"\n    result, err := divide(10, 2)\n    fmt.Println(x, name, result, err)\n}",
+      "xp": 20,
+      "lessons_required": ["go-les-01"],
+      "exercises": [
+        {
+          "id": "go-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What operator is used for short variable declaration in Go?",
+          "options": ["=", "==", ":=", "::"],
+          "answer": ":=",
+          "hints": ["It declares AND assigns in one step"]
+        }
+      ]
+    },
+    {
+      "id": "go-les-03",
+      "order": 3,
+      "title": "Goroutines & Concurrency",
+      "content": "Goroutines are lightweight threads managed by Go. Launch one with the 'go' keyword. Channels (chan) allow goroutines to communicate. This is Go's main superpower for writing concurrent programs.",
+      "code_example": "package main\nimport (\n    \"fmt\"\n    \"time\"\n)\n\nfunc sayHello(name string) {\n    time.Sleep(100 * time.Millisecond)\n    fmt.Println(\"Hello,\", name)\n}\n\nfunc main() {\n    go sayHello(\"Alice\") // runs concurrently\n    go sayHello(\"Bob\")\n    time.Sleep(500 * time.Millisecond)\n    fmt.Println(\"Done\")\n}",
+      "xp": 30,
+      "lessons_required": ["go-les-02"],
+      "exercises": [
+        {
+          "id": "go-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What keyword launches a goroutine in Go?",
+          "options": ["async", "thread", "go", "spawn"],
+          "answer": "go",
+          "hints": ["go sayHello() — the keyword is literally 'go'"]
+        }
+      ]
+    },
+    {
+      "id": "go-les-04",
+      "order": 4,
+      "title": "Interfaces",
+      "content": "Go interfaces define behaviour — a set of method signatures. Any type that implements all methods of an interface automatically satisfies it (implicit implementation). This makes Go very flexible.",
+      "code_example": "type Speaker interface {\n    Speak() string\n}\n\ntype Dog struct{ Name string }\nfunc (d Dog) Speak() string { return \"Woof!\" }\n\ntype Cat struct{ Name string }\nfunc (c Cat) Speak() string { return \"Meow!\" }\n\nfunc makeSound(s Speaker) {\n    fmt.Println(s.Speak())\n}\n\nmakeSound(Dog{\"Rex\"})  // Woof!\nmakeSound(Cat{\"Luna\"}) // Meow!",
+      "xp": 25,
+      "lessons_required": ["go-les-03"],
+      "exercises": [
+        {
+          "id": "go-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "How does a type implement an interface in Go?",
+          "options": [
+            "By using the 'implements' keyword",
+            "By registering with the interface",
+            "Automatically, by implementing all its methods",
+            "By inheriting from the interface"
+          ],
+          "answer": "Automatically, by implementing all its methods",
+          "hints": ["Go uses implicit implementation — no 'implements' keyword needed"]
+        }
+      ]
+    }
+  ]
+}

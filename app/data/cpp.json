@@ -1,0 +1,107 @@
+{
+  "id": "cpp",
+  "name": "C++",
+  "icon": "langs/cpp.svg",
+  "description": "A high-performance systems language used in game engines, embedded systems, OS development, and competitive programming.",
+  "lessons": [
+    {
+      "id": "cpp-les-01",
+      "order": 1,
+      "title": "Hello World & Compilation",
+      "content": "C++ programs must be compiled before running. Every program needs a main() function. #include imports libraries. 'cout' outputs text to the console and '<<' is the stream insertion operator.",
+      "code_example": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello, World!\" << endl;\n    cout << 42 << endl;\n    return 0;\n}",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "cpp-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which object is used to print output in C++?",
+          "options": ["printf", "print", "cout", "System.out"],
+          "answer": "cout",
+          "hints": ["It stands for 'character output' and is in <iostream>"]
+        },
+        {
+          "id": "cpp-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What does #include <iostream> do?",
+          "options": ["Defines main()", "Imports the input/output library", "Starts the program", "Declares variables"],
+          "answer": "Imports the input/output library",
+          "hints": ["iostream = input/output stream"]
+        }
+      ]
+    },
+    {
+      "id": "cpp-les-02",
+      "order": 2,
+      "title": "Variables & Primitive Types",
+      "content": "C++ has strict static types. Common types: int (integer), double (decimal), bool (true/false), char (single character), string (text, requires <string>). All variables must be declared with a type.",
+      "code_example": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int age = 25;\n    double price = 9.99;\n    bool active = true;\n    string name = \"Alice\";\n\n    cout << name << \" is \" << age << endl;\n    return 0;\n}",
+      "xp": 15,
+      "lessons_required": ["cpp-les-01"],
+      "exercises": [
+        {
+          "id": "cpp-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "Which C++ type stores a decimal number?",
+          "options": ["int", "char", "bool", "double"],
+          "answer": "double",
+          "hints": ["It has double precision floating point"]
+        }
+      ]
+    },
+    {
+      "id": "cpp-les-03",
+      "order": 3,
+      "title": "Pointers & References",
+      "content": "Pointers store memory addresses. The & operator gets an address; the * operator dereferences it. References are aliases for variables. Pointers and references are fundamental to C++ memory management.",
+      "code_example": "int x = 10;\nint* ptr = &x;   // ptr holds the address of x\n*ptr = 20;       // change x through the pointer\ncout << x;       // 20\n\nint& ref = x;    // ref is an alias for x\nref = 30;\ncout << x;       // 30",
+      "xp": 30,
+      "lessons_required": ["cpp-les-02"],
+      "exercises": [
+        {
+          "id": "cpp-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "hard",
+          "xp": 15,
+          "question": "What does the * operator do when used on a pointer?",
+          "options": ["Gets the address", "Multiplies values", "Dereferences — accesses the value at the address", "Declares a pointer"],
+          "answer": "Dereferences — accesses the value at the address",
+          "hints": ["int* ptr — * in declaration; *ptr — dereferences"]
+        }
+      ]
+    },
+    {
+      "id": "cpp-les-04",
+      "order": 4,
+      "title": "Classes & OOP",
+      "content": "C++ supports OOP with classes. A class has private data members and public methods. The constructor initializes the object. Use '.' to access public members on an object.",
+      "code_example": "class Rectangle {\nprivate:\n    double width, height;\npublic:\n    Rectangle(double w, double h) : width(w), height(h) {}\n    double area() { return width * height; }\n};\n\nRectangle r(4.0, 3.0);\ncout << r.area(); // 12",
+      "xp": 30,
+      "lessons_required": ["cpp-les-03"],
+      "exercises": [
+        {
+          "id": "cpp-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What access specifier makes class members accessible from outside the class?",
+          "options": ["private", "protected", "public", "extern"],
+          "answer": "public",
+          "hints": ["private = internal only; public = accessible everywhere"]
+        }
+      ]
+    }
+  ]
+}

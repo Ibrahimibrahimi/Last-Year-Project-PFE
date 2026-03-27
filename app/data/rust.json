@@ -1,0 +1,107 @@
+{
+  "id": "rust",
+  "name": "Rust",
+  "icon": "langs/rust.svg",
+  "description": "A systems language focused on memory safety and performance without a garbage collector. Beloved for reliability and speed.",
+  "lessons": [
+    {
+      "id": "rust-les-01",
+      "order": 1,
+      "title": "Hello World & println!",
+      "content": "Rust uses macros (identified by !) for common operations. println! prints formatted output. Every Rust program starts with a main() function. Rust files have the .rs extension and are compiled with rustc.",
+      "code_example": "fn main() {\n    println!(\"Hello, World!\");\n    println!(\"The answer is {}\", 42);\n    println!(\"{} + {} = {}\", 1, 2, 1 + 2);\n}",
+      "xp": 10,
+      "lessons_required": [],
+      "exercises": [
+        {
+          "id": "rust-ex-01-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "How do you print output in Rust?",
+          "options": ["print()", "console.log()", "println!()", "System.out.println()"],
+          "answer": "println!()",
+          "hints": ["The ! means it is a macro, not a regular function"]
+        },
+        {
+          "id": "rust-ex-01-02",
+          "order": 2,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "What placeholder is used for formatting values in println! ?",
+          "options": ["%s", "{}", "$var", "#{}"],
+          "answer": "{}",
+          "hints": ["Curly braces are the placeholder in Rust format strings"]
+        }
+      ]
+    },
+    {
+      "id": "rust-les-02",
+      "order": 2,
+      "title": "Variables & Mutability",
+      "content": "In Rust, variables are immutable by default. Use 'let' to declare. Add 'mut' to make a variable mutable. This immutability-first approach prevents many bugs. Constants use 'const' and require a type.",
+      "code_example": "fn main() {\n    let x = 5;         // immutable\n    // x = 6;          // Error!\n\n    let mut y = 10;    // mutable\n    y = 20;            // OK\n\n    const MAX: u32 = 100;\n    println!(\"{} {} {}\", x, y, MAX);\n}",
+      "xp": 15,
+      "lessons_required": ["rust-les-01"],
+      "exercises": [
+        {
+          "id": "rust-ex-02-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "easy",
+          "xp": 5,
+          "question": "How do you make a variable mutable in Rust?",
+          "options": ["let var x = 5", "let mut x = 5", "mutable x = 5", "var x = 5"],
+          "answer": "let mut x = 5",
+          "hints": ["The keyword mut comes after let"]
+        }
+      ]
+    },
+    {
+      "id": "rust-les-03",
+      "order": 3,
+      "title": "Ownership & Borrowing",
+      "content": "Rust's ownership system manages memory without a garbage collector. Each value has one owner. When ownership moves, the original variable is invalid. Borrowing (&) lets you reference a value without taking ownership.",
+      "code_example": "fn main() {\n    let s1 = String::from(\"hello\");\n    let s2 = s1;          // s1 is MOVED to s2\n    // println!(\"{}\", s1); // Error: s1 is invalid!\n\n    let s3 = String::from(\"world\");\n    let s4 = &s3;         // s4 borrows s3\n    println!(\"{} {}\", s3, s4); // both valid\n}",
+      "xp": 35,
+      "lessons_required": ["rust-les-02"],
+      "exercises": [
+        {
+          "id": "rust-ex-03-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "hard",
+          "xp": 15,
+          "question": "What happens to s1 after 'let s2 = s1;' in Rust?",
+          "options": ["s1 is copied", "s1 is cloned", "s1 is moved — it is no longer valid", "s1 and s2 both point to the same data"],
+          "answer": "s1 is moved — it is no longer valid",
+          "hints": ["Rust moves ownership; to keep both, use .clone()"]
+        }
+      ]
+    },
+    {
+      "id": "rust-les-04",
+      "order": 4,
+      "title": "Structs & Enums",
+      "content": "Structs group related data. Enums list possible variants — Rust enums can also carry data. The powerful Option enum replaces null: Some(value) or None.",
+      "code_example": "struct Point { x: f64, y: f64 }\n\nenum Shape {\n    Circle(f64),\n    Rectangle(f64, f64),\n}\n\nfn area(s: Shape) -> f64 {\n    match s {\n        Shape::Circle(r) => std::f64::consts::PI * r * r,\n        Shape::Rectangle(w, h) => w * h,\n    }\n}\n\nlet p = Point { x: 1.0, y: 2.0 };\nprintln!(\"{}\", area(Shape::Circle(3.0)));",
+      "xp": 30,
+      "lessons_required": ["rust-les-03"],
+      "exercises": [
+        {
+          "id": "rust-ex-04-01",
+          "order": 1,
+          "type": "mcq",
+          "difficulty": "medium",
+          "xp": 10,
+          "question": "What Rust construct is used to match against enum variants?",
+          "options": ["switch", "if/else", "match", "case"],
+          "answer": "match",
+          "hints": ["match is exhaustive — you must handle every variant"]
+        }
+      ]
+    }
+  ]
+}
