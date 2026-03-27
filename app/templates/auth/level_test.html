@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block title %}Level Assessment — LearnCode{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <!-- Header -->
+      <div class="text-center mb-5">
+        <div class="lc-test-icon mb-3"><i class="bi bi-clipboard-check"></i></div>
+        <h2 class="fw-bold">Level Assessment</h2>
+        <p class="text-muted">
+          Answer these {{ questions | length }} questions so we can suggest the right lessons for you.
+          <br>There are no wrong answers — just be honest!
+        </p>
+        <div class="lc-progress-bar-wrap mt-4">
+          <div class="lc-progress-bar-track">
+            <div class="lc-progress-bar-fill" id="testProgress" style="width: 0%"></div>
+          </div>
+          <small class="text-muted" id="progressLabel">0 / {{ questions | length }} answered</small>
+        </div>
+      </div>
+
+      <!-- Quiz Form -->
+      <form method="POST" action="{{ url_for('auth.level_test') }}" id="levelTestForm">
+        <input type="hidden" name="questions_data" value="{{ questions_ids }}" />
+
+        {% for q in questions %}
+        <div class="lc-quiz-card mb-4" id="qcard-{{ loop.index }}">
+          <div class="d-flex align-items-start gap-3">
+            <span class="lc-q-num">{{ loop.index }}</span>
+            <div class="flex-grow-1">
+              <p class="fw-semibold mb-1">{{ q.question }}</p>
+              <span class="badge
+                {% if q.difficulty == 'easy' %}bg-success
+                {% elif q.difficulty == 'medium' %}bg-warning text-dark
+                {% else %}bg-danger{% endif %} mb-3">
+                {{ q.difficulty | capitalize }}
+              </span>
+
+              <div class="lc-options">
+                {% for opt in q.get_options() %}
+                <label class="lc-option-label">
+                  <input type="radio" name="q_{{ q.id }}" value="{{ opt }}"
+                         class="lc-radio-input" onchange="updateProgress()" />
+                  <span class="lc-option-text">{{ opt }}</span>
+                </label>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn lc-btn-primary btn-lg px-5" id="submitBtn">
+            <i class="bi bi-check2-circle me-2"></i>Submit & Get My Level
+          </button>
+          <p class="text-muted small mt-2">You can always retake this in your profile settings</p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  const totalQ = {{ questions | length }};
+
+  function updateProgress() {
+    const answered = document.querySelectorAll('input[type=radio]:checked').length;
+    const pct = Math.round((answered / totalQ) * 100);
+    document.getElementById('testProgress').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = answered + ' / ' + totalQ + ' answered';
+  }
+</script>
+{% endblock %}
